@@ -12,14 +12,19 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
-    "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"src/**/*.{js, jsx}\"",
+    "test": "mocha --require test/helpers/setup.js",
+    "format":
+      "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"src/**/*.{js, jsx}\"",
     "lint": "eslint **/*.{js, jsx} --quiet"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
     "eslint": "^4.16.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
@@ -30,6 +35,8 @@
     "eslint-plugin-react": "^7.6.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^2.30.1",
+    "jsdom": "^11.6.1",
+    "mocha": "^5.0.0",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.1"
   }

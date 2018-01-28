@@ -29,7 +29,7 @@ module.exports = {
         enforce: "pre",
         test: /\.jsx?$/,
         loader: "eslint-loader",
-        exclude: /node_modules/
+        exclude: [path.resolve(__dirname, "node_modules")]
       },
       {
         include: path.resolve(__dirname, "src"),
