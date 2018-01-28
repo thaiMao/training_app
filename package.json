@@ -13,8 +13,9 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
-    "test": "mocha --require test/helpers/setup.js",
-    "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"src/**/*.{js, jsx}\"",
+    "test": "mocha",
+    "format":
+      "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"src/**/*.{js, jsx}\"",
     "lint": "eslint **/*.{js, jsx} --quiet"
   },
   "devDependencies": {
@@ -25,6 +26,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
+    "enzyme": "^3.3.0",
     "eslint": "^4.16.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
