@@ -3,7 +3,7 @@
 const { expect } = require("chai");
 const React = require("react");
 const Home = require("../src/Home");
-const Button = require("../src/Components/Button");
+const Button = require("../src/Button");
 const { shallow } = require("enzyme");
 
 describe("<Home /> ", () => {
