@@ -11,5 +11,13 @@
         "modules": false
       }
     ]
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./src"]
+      }
+    ]
   ]
 }
