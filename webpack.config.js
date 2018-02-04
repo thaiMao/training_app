@@ -12,7 +12,8 @@ module.exports = {
     publicPath: "/dist"
   },
   resolve: {
-    extensions: [".js", ".jsx", ".json"]
+    extensions: [".js", ".jsx", ".json"],
+    modules: [path.resolve("./src"), path.resolve("./node_modules")]
   },
   stats: {
     colors: true,
@@ -29,7 +30,7 @@ module.exports = {
         enforce: "pre",
         test: /\.jsx?$/,
         loader: "eslint-loader",
-        exclude: /node_modules/
+        exclude: [path.resolve(__dirname, "node_modules")]
       },
       {
         include: path.resolve(__dirname, "src"),
