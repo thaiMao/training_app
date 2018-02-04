@@ -9,7 +9,9 @@ const { shallow } = require("enzyme");
 describe("<Home /> ", () => {
   it("Should render a login button", () => {
     const wrapped = shallow(<Home />);
+
     expect(wrapped.contains(<button>Login</button>));
+
   });
 
   xit("Should render the brand", () => {
