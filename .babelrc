@@ -22,7 +22,7 @@
   ],
   "env": {
     "test": {
-      "plugins": ["transform-es2015-modules-commonjs"]
+      "plugins": ["env", "transform-es2015-modules-commonjs"]
     }
   }
 }
