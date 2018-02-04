@@ -12,9 +12,17 @@
       }
     ]
   ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./src"]
+      }
+    ]
+  ],
   "env": {
     "test": {
-      "presets": ["env"]
+      "plugins": ["env", "transform-es2015-modules-commonjs"]
     }
   }
 }
