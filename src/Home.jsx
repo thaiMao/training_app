@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import Button from "./Button";
+
 
 class Home extends PureComponent {
   componentDidMount() {}
@@ -8,7 +8,7 @@ class Home extends PureComponent {
     return (
       <React.Fragment>
         <h1>My Brand</h1>
-        <Button>Login</Button>
+        <button>Login</button>
       </React.Fragment>
     );
   }
