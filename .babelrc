@@ -11,5 +11,10 @@
         "modules": false
       }
     ]
-  ]
+  ],
+  "env": {
+    "test": {
+      "presets": ["env"]
+    }
+  }
 }
