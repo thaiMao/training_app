@@ -12,6 +12,7 @@
       }
     ]
   ],
+<<<<<<< HEAD
   "plugins": [
     [
       "module-resolver",
@@ -23,6 +24,11 @@
   "env": {
     "test": {
       "plugins": ["transform-es2015-modules-commonjs"]
+=======
+  "env": {
+    "test": {
+      "presets": ["env"]
+>>>>>>> Fixed shallow test rendering
     }
   }
 }
