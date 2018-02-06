@@ -13,28 +13,22 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
-<<<<<<< Updated upstream
-    "test": "mocha --require test/helpers/setup.js",
-=======
     "test": "NODE_ENV=test mocha",
->>>>>>> Stashed changes
     "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"src/**/*.{js, jsx}\"",
     "lint": "eslint **/*.{js, jsx} --quiet"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
-<<<<<<< Updated upstream
-=======
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
->>>>>>> Stashed changes
     "eslint": "^4.16.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
@@ -47,6 +41,7 @@
     "html-webpack-plugin": "^2.30.1",
     "jsdom": "^11.6.1",
     "mocha": "^5.0.0",
+    "prop-types": "^15.6.0",
     "react-test-renderer": "^16.2.0",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.1"

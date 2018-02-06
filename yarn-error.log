@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /Users/Thai/.yarn/bin/yarn.js install
+  /usr/local/bin/node /Users/Thai/.yarn/bin/yarn.js add prop-types
 
 PATH: 
   /Library/Frameworks/Python.framework/Versions/3.6/bin:/Users/Thai/.yarn/bin:/Library/Frameworks/Python.framework/Versions/3.5/bin:/Users/Thai/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Users/Thai/.yarn/bin:/Library/Frameworks/Python.framework/Versions/3.5/bin:/Users/Thai/.rbenv/shims:/usr/local/Bluemix/bin:/usr/local/Bluemix/bin
@@ -29,14 +29,14 @@ npm manifest:
     },
     "scripts": {
       "start": "webpack-dev-server",
-      "test": "NODE_ENV=test mocha --require test/helpers/setup.js",
+      "test": "NODE_ENV=test mocha",
       "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"src/**/*.{js, jsx}\"",
       "lint": "eslint **/*.{js, jsx} --quiet"
     },
     "devDependencies": {
       "babel-core": "^6.26.0",
       "babel-loader": "^7.1.2",
-      "babel-plugin-module-resolver": "^3.0.0",
+      "babel-plugin-transform-class-properties": "^6.24.1",
       "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
       "babel-polyfill": "^6.26.0",
       "babel-preset-env": "^1.6.1",
