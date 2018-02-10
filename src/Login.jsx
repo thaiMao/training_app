@@ -3,23 +3,26 @@ import { object } from "prop-types";
 
 const LOGIN_CONTEXT = "__context__";
 
-function userNameField(props, context) {
-  const { user } = context[LOGIN_CONTEXT];
+function withCrendentials(Component) {
+  function Wrapper(props, context) {
+    const fieldContext = context[LOGIN_CONTEXT];
+    return <Component {...fieldContext} {...props} />;
+  }
+
+  Wrapper.contextTypes = {
+    [LOGIN_CONTEXT]: object
+  };
+
+  return Wrapper;
+}
+
+const userNameField = withCrendentials(function userNameField({ user }) {
   return <input type="text" value={user} />;
-}
+});
 
-userNameField.contextTypes = {
-  [LOGIN_CONTEXT]: object
-};
-
-function passwordField(props, context) {
-  const { pass } = context[LOGIN_CONTEXT];
+const passwordField = withCrendentials(function passwordField({ pass }) {
   return <input type="text" value={pass} />;
-}
-
-passwordField.contextTypes = {
-  [LOGIN_CONTEXT]: object
-};
+});
 
 class Login extends PureComponent {
   static User = userNameField;
