@@ -4,16 +4,15 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   context: __dirname,
-  entry: "./src/Client.jsx",
-  devtool: "cheap-eval-source-map",
+  entry: "./src/Client.tsx",
+  devtool: "source-map",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
     publicPath: "/dist"
   },
   resolve: {
-    extensions: [".js", ".jsx", ".json"],
-    modules: [path.resolve("./src"), path.resolve("./node_modules")]
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".json"]
   },
   stats: {
     colors: true,
@@ -27,9 +26,13 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.tsx?$/,
+        loader: "awesome-typescript-loader"
+      },
+      {
         enforce: "pre",
         test: /\.jsx?$/,
-        loader: "eslint-loader",
+        loader: ["eslint-loader", "source-map-loader"],
         exclude: [path.resolve(__dirname, "node_modules")]
       },
       {
@@ -62,4 +65,10 @@ module.exports = {
       allChunks: true
     })
   ]
+  /*
+  externals: {
+    react: "React",
+    "react-dom": "ReactDOM"
+  }
+  */
 };
