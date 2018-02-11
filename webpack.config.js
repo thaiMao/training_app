@@ -1,15 +1,21 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
   context: __dirname,
-  entry: "./src/Client.tsx",
-  devtool: "source-map",
+  entry: [
+    "react-hot-loader/patch",
+    "webpack-dev-server/client?http://localhost:8080",
+    "webpack/hot/only-dev-server",
+    "./src/Client.tsx"
+  ],
+  devtool: "cheap-eval-source-map",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: "/dist"
+    publicPath: "/dist/"
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx", ".json"]
@@ -20,6 +26,7 @@ module.exports = {
     chunks: true
   },
   devServer: {
+    hot: true,
     publicPath: "/dist/",
     historyApiFallback: true
   },
@@ -59,6 +66,8 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin(),
     new ExtractTextPlugin({
       filename: "dist/[name].bundle.css",
