@@ -14,6 +14,7 @@
   ],
   "plugins": [
     [
+      "react-hot-loader/babel",
       "module-resolver",
       {
         "root": ["./src"]
