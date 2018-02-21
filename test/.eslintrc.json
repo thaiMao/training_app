@@ -13,12 +13,8 @@
     "browser": true,
     "node": true
   },
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "paths": ["src"]
-      }
-    }
+  "rules": {
+    "no-unused-expressions": "off"
   },
   "root": true
 }

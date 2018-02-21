@@ -1,19 +1,25 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const webpack = require('webpack')
 
 module.exports = {
   context: __dirname,
-  entry: "./src/Client.jsx",
-  devtool: "cheap-eval-source-map",
+  entry: [
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server',
+    './src/Client.tsx'
+  ],
+  devtool: 'cheap-eval-source-map',
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
-    publicPath: "/dist"
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/dist/'
   },
   resolve: {
-    extensions: [".js", ".jsx", ".json"],
-    modules: [path.resolve("./src"), path.resolve("./node_modules")]
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+    modules: [path.resolve(__dirname, 'src'), 'node_modules']
   },
   stats: {
     colors: true,
@@ -21,23 +27,29 @@ module.exports = {
     chunks: true
   },
   devServer: {
-    publicPath: "/dist/",
+    hot: true,
+    publicPath: '/dist/',
     historyApiFallback: true
   },
   module: {
     rules: [
       {
-        enforce: "pre",
-        test: /\.jsx?$/,
-        loader: "eslint-loader",
-        exclude: [path.resolve(__dirname, "node_modules")]
+        test: /\.tsx?$/,
+        loader: 'awesome-typescript-loader'
       },
       {
-        include: path.resolve(__dirname, "src"),
+        enforce: 'pre',
+        test: /\.jsx?$/,
+        loader: ['eslint-loader', 'source-map-loader'],
+        exclude: [path.resolve(__dirname, 'node_modules')]
+      },
+      {
+        include: [path.resolve(__dirname, 'src')],
+        exclude: [path.resolve(__dirname, 'node_modules')],
         test: /\.jsx?$/,
         use: [
           {
-            loader: "babel-loader"
+            loader: 'babel-loader'
           }
         ]
       },
@@ -45,20 +57,28 @@ module.exports = {
         test: /\.css$/,
         use: [
           {
-            loader: "style-loader"
+            loader: 'style-loader'
           },
           {
-            loader: "css-loader"
+            loader: 'css-loader'
           }
         ]
       }
     ]
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin(),
     new ExtractTextPlugin({
-      filename: "dist/[name].bundle.css",
+      filename: 'dist/[name].bundle.css',
       allChunks: true
     })
   ]
-};
+  /*
+  externals: {
+    react: "React",
+    "react-dom": "ReactDOM"
+  }
+  */
+}
