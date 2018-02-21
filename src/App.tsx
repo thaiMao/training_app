@@ -1,7 +1,13 @@
+import { BrowserRouter, Route, StaticRouter, Switch } from 'react-router-dom'
 import React, { Component } from 'react'
+import styled, { ThemeProvider } from 'styled-components'
+import About from 'About'
+import Exercise from 'Exercise'
 import Home from 'Home'
+import NotFound from 'NotFound'
 import { Provider } from 'react-redux'
 import store from 'store'
+import { theme } from 'theme'
 
 interface P {}
 
@@ -11,10 +17,16 @@ class App extends Component<P> {
   render() {
     return (
       <Provider store={store}>
-        <div>
-          Hello, world
-          <Home />
-        </div>
+        <ThemeProvider theme={theme}>
+          <BrowserRouter>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/:id" component={Exercise} />
+              <Route path="/about" component={About} />
+              <Route component={NotFound} />
+            </Switch>
+          </BrowserRouter>
+        </ThemeProvider>
       </Provider>
     )
   }
