@@ -2,11 +2,11 @@ import { createServer } from 'http'
 import app from './server'
 
 const server = createServer(app)
-let currentApp = app
 const PORT = 3000
+let currentApp = app
 
 server.listen(PORT, () => {
-  // console.log(`Listening on PORT ${PORT}`)
+  console.log(`Express server listening on port ${PORT}`)
 })
 
 if (module.hot) {
