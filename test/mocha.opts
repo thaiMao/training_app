@@ -1,2 +1,0 @@
---require test/helpers/setup.js
---compilers js:babel-register,jsx:babel-register
