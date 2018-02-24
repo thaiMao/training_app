@@ -5,7 +5,7 @@ const app = express()
 
 app.use('/admin', routes.admin)
 app.use('/analytics', routes.analytics)
-app.use('/users', routes.users)
+app.use('/user', routes.user)
 
 app.get('/', (req, res) => {
   res.json({ ok: true })
