@@ -9,9 +9,9 @@ import { Provider } from 'react-redux'
 import store from 'store'
 import { theme } from 'theme'
 
-interface P {}
+interface Props {}
 
-class App extends Component<P> {
+class App extends Component<Props> {
   componentDidMount() {}
 
   render() {

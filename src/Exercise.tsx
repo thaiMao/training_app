@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 
-class Exercise extends Component {
+interface Props {}
+
+class Exercise extends Component<Props> {
   componentDidMount() {}
 
   render() {
@@ -8,7 +10,7 @@ class Exercise extends Component {
       <main>
         <p>Excercise Page</p>
         <pre>
-          <code>{JSON.stringify(this.props, null, 4)}</code>
+          <code />
         </pre>
       </main>
     )
