@@ -1,18 +1,18 @@
 import express from 'express'
-import { getAll, getOne, createOne, findByParam } from './user.controller'
+import controllers from './user.controller'
 
 const usersRouter = express.Router()
 
-usersRouter.param('id', findByParam)
+usersRouter.param('id', controllers.findByParam)
 
 usersRouter
   .route('/')
-  .get(getAll)
-  .post(createOne)
+  .get(controllers.getAll)
+  .post(controllers.createOne)
 
 usersRouter
   .route('/:id')
-  .get(getOne)
-  .delete(createOne)
+  .get(controllers.getOne)
+  .delete(controllers.createOne)
 
 export default usersRouter
