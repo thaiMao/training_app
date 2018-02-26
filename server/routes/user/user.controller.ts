@@ -1,4 +1,4 @@
-import { generateControllers } from '../modules'
+import { generateControllers } from '../../modules'
 
 const userControllers = generateControllers('users')
 
