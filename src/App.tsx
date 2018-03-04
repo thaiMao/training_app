@@ -2,6 +2,7 @@ import { BrowserRouter, Route, StaticRouter, Switch } from 'react-router-dom'
 import React, { Component } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import About from 'About'
+import Count from 'Count'
 import Exercise from 'Exercise'
 import Home from 'Home'
 import NotFound from 'NotFound'
@@ -21,6 +22,7 @@ class App extends Component<Props> {
           <BrowserRouter>
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route path="/count" component={Count} />
               <Route path="/:id" component={Exercise} />
               <Route path="/about" component={About} />
               <Route component={NotFound} />

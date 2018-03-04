@@ -20,14 +20,16 @@
       "module-resolver",
       {
         "root": ["./src"],
-        "extensions": [".ts", ".tsx", ".js", ".jsx"]
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     ]
   ],
   "env": {
     "test": {
-      "presets": ["env"],
-      "plugins": ["transform-es2015-modules-commonjs"]
+      "plugins": [
+        "transform-class-properties",
+        "transform-es2015-modules-commonjs"
+      ]
     }
   }
 }

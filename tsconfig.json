@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "*": ["*", "src/*"]
+      "*": ["*", "src/*", "api/*"]
     },
     "outDir": "./dist/",
     "sourceMap": true,
@@ -15,5 +15,5 @@
     "allowJs": true,
     "experimentalDecorators": true
   },
-  "include": ["./src/**/*", "./server/**/*"]
+  "include": ["./src/**/*", "./api/**/*", "./__tests__/**/*"]
 }
