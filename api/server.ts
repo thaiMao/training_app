@@ -1,3 +1,5 @@
+import config from 'config'
+import { connect } from 'db'
 import express from 'express'
 import { setupMiddleware } from './middleware'
 import { protect, errorHandler } from './modules'
@@ -6,6 +8,7 @@ import * as routes from './routes'
 const app = express()
 
 setupMiddleware(app)
+connect(config)
 
 app.use('/admin', protect, routes.admin)
 app.use('/analytics', protect, routes.analytics)

@@ -25,13 +25,15 @@
     "test": "jest --coverage",
     "test:report": "open coverage/lcov-report/index.html",
     "test:watch": "jest --watch",
-    "format":
-      "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"src/**/*.{ts, tsx}\"",
+    "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"src/**/*.{ts, tsx}\"",
     "lint": "eslint **/*.{ts, tsx} --quiet"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/test-setup.js",
-    "collectCoverageFrom": ["**/*.{ts, tsx}", "!**/node_modules/**"],
+    "collectCoverageFrom": [
+      "**/*.{ts, tsx}",
+      "!**/node_modules/**"
+    ],
     "coverageThreshold": {
       "./src": {
         "statements": 50,
@@ -40,14 +42,25 @@
         "lines": 100
       }
     },
-    "moduleFileExtensions": ["js", "jsx", "json", "ts", "tsx"],
-    "modulePaths": ["src", "api"],
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "ts",
+      "tsx"
+    ],
+    "modulePaths": [
+      "src",
+      "api"
+    ],
     "transform": {
       "^.+\\.tsx?$": "babel-jest",
       "^.+\\.(ts|tsx)$": "<rootDir>/preprocessor.js"
     },
     "testEnvironment": "node",
-    "testMatch": ["**/__tests__/**/*.(ts|tsx|js)"]
+    "testMatch": [
+      "**/__tests__/**/*.(ts|tsx|js)"
+    ]
   },
   "devDependencies": {
     "@types/express": "^4.11.1",

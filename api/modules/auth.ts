@@ -1,9 +1,8 @@
-import expressJwt from 'express-jwt'
+import config from 'config'
+import jwt from 'express-jwt'
 
-const jwtSecret = 'worstkeptsecret'
-
-const checkToken = expressJwt({ secret: jwtSecret })
+const checkToken = jwt({ secret: config.secrets.JWT_SECRET })
 
 export function protect() {
-  return {}
+  return checkToken
 }

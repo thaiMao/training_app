@@ -1,12 +1,12 @@
+import config from 'config'
 import { createServer } from 'http'
 import app from './server'
 
 const server = createServer(app)
-const PORT = 3000
 let currentApp = app
 
-server.listen(PORT, () => {
-  console.log(`Express server listening on port ${PORT}`)
+server.listen(config.port, () => {
+  console.log(`Express server listening on port ${config.port}`)
 })
 
 if (module.hot) {

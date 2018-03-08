@@ -1,37 +1,41 @@
-const controllers = {
-  getAll(model: any, body: any) {
-    return Promise.resolve({ [model]: `Get all ${model}` })
-  },
-  getOne(model: any, body: any) {
-    return Promise.resolve({ [model]: `Get one ${model}` })
-  },
+const testData = { message: 'hello' }
+
+export const controllers = {
   createOne(model: any, body: any) {
-    return Promise.resolve({ [model]: `Create one ${model}` })
+    return model.create(body)
   },
-  updateOne(model: any, body: any) {
-    return Promise.resolve({ [model]: `Update one ${model}` })
+  updateOne(docToUpdate: any, update: any) {
+    // TODO Need to deep merge!
+    let updatedDocument = Object.assign({}, docToUpdate, update)
+    return updatedDocument.save()
   },
-  deleteOne(model: any, body: any) {
-    return Promise.resolve({ [model]: `Delete a ${model}` })
+  deleteOne(docToDelete: any) {
+    return docToDelete.remove()
+  },
+  getOne(docToGet: any) {
+    return Promise.resolve(docToGet)
+  },
+  getAll(model: any) {
+    return model.find({}).exec()
   },
   findByParam(model: any, id: any) {
-    return Promise.resolve({ [model]: `Find by param for ${model}` })
+    return model.findById(id).exec()
   }
 }
 
 function getAll(model: any) {
   return function(req: any, res: any, next: any) {
     controllers
-      .getAll(model, req.body)
-      .then(result => res.json(result))
-      .catch(err => res.status(504).send('Something went wrong'))
+      .getAll(model)
+      .then((result: any) => res.json(result))
+      .catch((err: any) => res.status(504).send('Something went wrong'))
   }
 }
 
 function getOne(model: any) {
   return function(req: any, res: any) {
     return controllers
-      .getOne(model, req.body)
+      .getOne(req.body)
       .then(result => res.status(200).json(result))
       .catch(err => res.status(504).send('Something went wrong'))
   }
@@ -41,8 +45,8 @@ function createOne(model: any) {
   return function(req: any, res: any, next: any) {
     return controllers
       .createOne(model, req.body)
-      .then(doc => res.status(201).json(doc))
-      .catch(err => next(err))
+      .then((doc: any) => res.status(201).json(doc))
+      .catch((err: any) => next(err))
   }
 }
 
@@ -53,19 +57,19 @@ function updateOne(model: any) {
 
     return controllers
       .updateOne(docToUpdate, update)
-      .then(doc => res.status(201).json(doc))
-      .catch(err => next(err))
+      .then((doc: any) => res.status(201).json(doc))
+      .catch((err: any) => next(err))
   }
 }
 
 function deleteOne(model: any) {
   return function(req: any, res: any, next: any) {
     return controllers
-      .deleteOne(model, req.body)
-      .then(result => {
+      .deleteOne(req.body)
+      .then((result: any) => {
         res.status(201).json(result)
       })
-      .then(err => {
+      .then((err: any) => {
         next(err)
       })
   }
@@ -75,7 +79,7 @@ function findByParam(model: any) {
   return function(req: any, res: any, next: any, id: any) {
     return controllers
       .findByParam(model, id)
-      .then(doc => {
+      .then((doc: any) => {
         if (!doc) {
           next(new Error('Not Found Error'))
         } else {
@@ -83,13 +87,13 @@ function findByParam(model: any) {
           next()
         }
       })
-      .catch(err => {
+      .catch((err: any) => {
         next(err)
       })
   }
 }
 
-const generateControllers = function(model: any) {
+export const generateControllers = function(model: any) {
   return {
     getAll: getAll(model),
     getOne: getOne(model),
@@ -98,5 +102,3 @@ const generateControllers = function(model: any) {
     findByParam: findByParam(model)
   }
 }
-
-export default generateControllers
