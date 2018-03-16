@@ -8,7 +8,7 @@ export const schema = {
   },
   passwordHash: {
     type: String,
-    required: [true, 'Error - passwordHash is a required property of User']
+    required: false
   },
   age: {
     type: Number,
@@ -16,6 +16,6 @@ export const schema = {
   }
 }
 
-const userSchema = new mongoose.Schema(schema)
+const userSchema = new mongoose.Schema(schema, { timestamps: true })
 
 export const User = mongoose.model('user', userSchema)

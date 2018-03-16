@@ -1,5 +1,6 @@
-import { generateControllers } from '../../modules'
+import { generateControllers } from 'modules'
+import { User } from 'resources/user'
 
-const userControllers = generateControllers('users')
+const userControllers: any = generateControllers(User)
 
 export default userControllers

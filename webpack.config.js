@@ -22,7 +22,7 @@ const serverConfig = {
     publicPath: '/dist/'
   },
   resolve: {
-    extensions: ['.ts', '.js', '.json'],
+    extensions: ['.ts', '.js', '.json', '.gql', '.graphql'],
     modules: [path.resolve(__dirname, 'api'), 'node_modules']
   },
   stats: {
@@ -32,6 +32,13 @@ const serverConfig = {
   },
   module: {
     rules: [
+      {
+        test: /\.(graphql|gql)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'raw-loader'
+        }
+      },
       {
         test: /\.ts$/,
         loader: 'awesome-typescript-loader'

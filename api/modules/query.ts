@@ -1,3 +1,5 @@
+import { mergeDeep } from 'immutable'
+
 const testData = { message: 'hello' }
 
 export const controllers = {
@@ -5,8 +7,7 @@ export const controllers = {
     return model.create(body)
   },
   updateOne(docToUpdate: any, update: any) {
-    // TODO Need to deep merge!
-    let updatedDocument = Object.assign({}, docToUpdate, update)
+    const updatedDocument = mergeDeep(docToUpdate, update)
     return updatedDocument.save()
   },
   deleteOne(docToDelete: any) {
@@ -93,7 +94,7 @@ function findByParam(model: any) {
   }
 }
 
-export const generateControllers = function(model: any) {
+function generateControllers(model: any): Object {
   return {
     getAll: getAll(model),
     getOne: getOne(model),
@@ -102,3 +103,4 @@ export const generateControllers = function(model: any) {
     findByParam: findByParam(model)
   }
 }
+export default generateControllers

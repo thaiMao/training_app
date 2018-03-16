@@ -1,2 +1,7 @@
-export { Exercise, exerciseSchema } from './exercise'
-export { User, userSchema } from './user'
+export {
+  Exercise,
+  exerciseSchema,
+  exerciseTypes,
+  exerciseResolvers
+} from './exercise'
+export { User, userSchema, userTypes, userResolvers } from './user'

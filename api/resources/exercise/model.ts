@@ -14,6 +14,10 @@ export const schema = {
   goal: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'size'
+  },
+  users: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'user'
   }
 }
 

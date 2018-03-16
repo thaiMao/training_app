@@ -1,1 +1,1 @@
-export { dropDb, removeModel } from './helpers'
+export { dropDb, removeModel, runQuery } from './helpers'

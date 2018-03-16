@@ -1,5 +1,7 @@
-import config from '../../../config'
+import config from 'config'
 import mongoose from 'mongoose'
+import { graphql } from 'graphql'
+import { schema } from 'routes/graphql'
 
 mongoose.Promise = global.Promise
 
@@ -25,4 +27,8 @@ export const dropDb = () => {
       useMongoClient: true
     })
     .then(() => Promise.all(mongoose.modelNames().map(removeModel)))
+}
+
+export const runQuery = async (query: any, variables: any, user: any) => {
+  return graphql(schema, query, {}, { user }, variables)
 }
