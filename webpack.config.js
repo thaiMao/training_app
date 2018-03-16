@@ -7,7 +7,7 @@ const webpack = require('webpack')
 
 const serverConfig = {
   context: __dirname,
-  entry: ['webpack/hot/poll?1000', './server/index.ts'],
+  entry: ['webpack/hot/poll?1000', './api/index.ts'],
   watch: true,
   devtool: 'source-map',
   target: 'node',
@@ -22,8 +22,8 @@ const serverConfig = {
     publicPath: '/dist/'
   },
   resolve: {
-    extensions: ['.ts', '.js', '.json'],
-    modules: [path.resolve(__dirname, 'server'), 'node_modules']
+    extensions: ['.ts', '.js', '.json', '.gql', '.graphql'],
+    modules: [path.resolve(__dirname, 'api'), 'node_modules']
   },
   stats: {
     colors: true,
@@ -33,6 +33,13 @@ const serverConfig = {
   module: {
     rules: [
       {
+        test: /\.(graphql|gql)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'raw-loader'
+        }
+      },
+      {
         test: /\.ts$/,
         loader: 'awesome-typescript-loader'
       },
@@ -40,11 +47,11 @@ const serverConfig = {
         enforce: 'pre',
         test: /\.js$/,
         loader: ['eslint-loader', 'source-map-loader'],
-        include: [path.resolve(__dirname, 'server')],
+        include: [path.resolve(__dirname, 'api')],
         exclude: [path.resolve(__dirname, 'node_modules')]
       },
       {
-        include: [path.resolve(__dirname, 'server')],
+        include: [path.resolve(__dirname, 'api')],
         exclude: [path.resolve(__dirname, 'node_modules')],
         test: /\.js$/,
         use: [
