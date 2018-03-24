@@ -1,8 +1,10 @@
 import {
-  userTypes,
-  userResolvers,
+  advertiserTypes,
+  advertiserResolvers,
   exerciseTypes,
-  exerciseResolvers
+  exerciseResolvers,
+  userTypes,
+  userResolvers
 } from 'resources'
 import { graphqlExpress } from 'apollo-server-express'
 import { makeExecutableSchema } from 'graphql-tools'
@@ -16,8 +18,8 @@ const baseSchema = `
 `
 
 export const schema = makeExecutableSchema({
-  typeDefs: [baseSchema, userTypes, exerciseTypes],
-  resolvers: mergeDeep(userResolvers, exerciseResolvers)
+  typeDefs: [baseSchema, userTypes, exerciseTypes, advertiserTypes],
+  resolvers: mergeDeep(userResolvers, exerciseResolvers, advertiserResolvers)
 })
 
 export const graphQLRouter = graphqlExpress(req => ({

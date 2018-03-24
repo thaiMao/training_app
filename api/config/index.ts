@@ -10,7 +10,19 @@ const baseConfig = {
     JWT_SECRET: 'worstkeptsecret'
   },
   db: {
-    url: 'mongodb://localhost/exercises'
+    url: 'mongodb://localhost/exercises',
+    sql: {
+      url: '',
+      options: {
+        logging: false,
+        pool: {
+          max: 5,
+          min: 0,
+          idle: 10000
+        }
+      },
+      dialect: 'postgres'
+    }
   },
   disableAuth: false,
   expireTime: '30d'

@@ -6,7 +6,7 @@ describe('User', () => {
 
   beforeEach(async () => {
     await dropDb()
-    user = await User.create({ username: 'Bob', passwordHash: '123' })
+    user = await User.create({ name: 'Bob' })
   })
 
   afterEach(async () => {
@@ -14,22 +14,30 @@ describe('User', () => {
   })
 
   test('should get user', async () => {
+    console.log(user)
     const result = await runQuery(
       `
-      {
-        getUser {
+      query($id: ID!){
+        getUser(id: $id) {
           id
           name
         }
       }
     `,
-      {},
+      {
+        id: user.id
+      },
       user
     )
 
     expect(result.errors).toBeFalsy()
-    expect(result.data.getUser).toBeInstanceOf(Object)
-    expect(result.data.getUser.id).toEqual(user.id.toString())
+    expect(result.data.getUser).toEqual(
+      expect.objectContaining({
+        id: expect.any(String),
+        name: expect.any(String)
+      })
+    )
+    expect(result.data.getUser.id).toEqual(user._id.toString())
   })
 
   test('should update user', async () => {
@@ -37,19 +45,21 @@ describe('User', () => {
 
     const result = await runQuery(
       `
-      mutation UpdateUser($input: UpdatedUser){
+      mutation UpdateUser($input: UpdatedUser!){
         updateUser(input: $input) {
           id
           name
         }
       }
     `,
-      { input: { id: user.id, name: newName }, user },
+      { input: { name: newName } },
       user
     )
 
     expect(result.errors).toBeFalsy()
-    expect(result.data.updateUser).toBeInstanceOf(Object)
+    expect(result.data.updateUser).toEqual(
+      expect.objectContaining({ id: user.id, name: newName })
+    )
     expect(result.data.updateUser.id).toEqual(user.id.toString())
   })
 })

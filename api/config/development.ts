@@ -1,3 +1,5 @@
+import * as sql from 'config/database/sql'
+
 export const config = {
   expireTime: '30d',
   disableAuth: true,
@@ -5,6 +7,7 @@ export const config = {
     JWT_SECRET: 'yeezy350boost'
   },
   db: {
-    url: 'mongodb://admin:pass@ds261078.mlab.com:61078/dev0'
+    url: 'mongodb://admin:pass@ds261078.mlab.com:61078/dev0',
+    sql
   }
 }

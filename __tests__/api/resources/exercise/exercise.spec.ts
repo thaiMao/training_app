@@ -13,7 +13,7 @@ describe('User', () => {
     await dropDb()
   })
 
-  test('should get user', async () => {
+  test.skip('should get user', async () => {
     const result = await runQuery(
       `
       {
@@ -32,7 +32,7 @@ describe('User', () => {
     expect(result.data.getUser.id).toEqual(user.id.toString())
   })
 
-  test('should update user', async () => {
+  test.skip('should update user', async () => {
     const newName = 'newName'
 
     const result = await runQuery(

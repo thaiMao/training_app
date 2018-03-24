@@ -1,1 +1,1 @@
-export { default as connect } from './db'
+export { connect } from './nosql'

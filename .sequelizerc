@@ -1,0 +1,14 @@
+const path = require('path')
+
+process.env.NODE_ENV = process.env.NODE_ENV || 'development'
+
+const migrationsPath = process.env.NODE_ENV === 'development'? path.resolve('api', 'db', 'sql', 'migrations', 'development') : path.resolve('api', 'db', 'sql', 'migrations', 'test') 
+
+module.exports = {
+  config: path.resolve('api', 'config', 'database', 'sql'),
+  'migrations-path': migrationsPath,
+  'models-path': path.resolve('api', 'db', 'sql', 'models')
+}
+
+
+

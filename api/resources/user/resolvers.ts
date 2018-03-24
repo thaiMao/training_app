@@ -1,9 +1,11 @@
 import { User } from './model'
 import { mergeDeep } from 'immutable'
 
-const getUser = async (_: any, __: any, { user }: any) => {
+const getUser = async (_: any, { id }: any) => {
+  const user = await User.findById(id).exec()
+
   if (!user) {
-    throw new Error(`Cannot found user with id`)
+    throw new Error(`No user id ${id} found`)
   } else {
     return user
   }
@@ -18,8 +20,8 @@ const createUser = (_: any, { input }: any) => {
 }
 
 const updateUser = (_: any, { input }: any, { user }: any) => {
-  const updatedUser = mergeDeep(user, input)
-  return updatedUser.save()
+  const { id } = user
+  return User.findByIdAndUpdate(id, input, { new: true })
 }
 
 const removeUser = (_: any, { id }: any) => {
