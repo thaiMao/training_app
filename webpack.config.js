@@ -86,7 +86,7 @@ const clientConfig = {
     publicPath: '/dist/'
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.css'],
     modules: [path.resolve(__dirname, 'src'), 'node_modules']
   },
   stats: {
@@ -123,12 +123,24 @@ const clientConfig = {
       },
       {
         test: /\.css$/,
+        include: [path.resolve(__dirname, 'src')],
         use: [
           {
             loader: 'style-loader'
           },
           {
             loader: 'css-loader'
+          }
+        ]
+      },
+      {
+        test: /\.(css|png|jpg|gif|json)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
           }
         ]
       }
