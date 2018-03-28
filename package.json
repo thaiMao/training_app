@@ -31,15 +31,18 @@
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "sequelize": "^4.37.1",
+    "start-server-webpack-plugin": "^2.2.1",
     "styled-components": "^3.0.2",
     "typescript": "^2.7.2",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.1",
     "webpack-merge": "^4.1.2",
-    "webpack-node-externals": "^1.6.0"
+    "webpack-node-externals": "^1.6.0",
+    "uglifyjs-webpack-plugin": "^1.2.4"
   },
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
     "pretest": "yarn db:migrate",
     "test": "jest --coverage",
     "test:report": "open coverage/lcov-report/index.html",
@@ -121,7 +124,6 @@
     "react-test-renderer": "^16.2.0",
     "script-loader": "^0.7.2",
     "source-map-loader": "^0.2.3",
-    "start-server-webpack-plugin": "^2.2.1",
     "style-loader": "^0.20.3"
   }
 }

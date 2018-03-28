@@ -1,6 +1,7 @@
 ///<reference path="typings.d.ts" />
+import 'file-loader!./web-app-manifest.json'
 import 'add-to-homescreen/addtohomescreen.js'
-import 'add-to-homescreen/dist/style/addtohomescreen.css'
+import 'styles/addtohomescreen.css'
 import { BrowserRouter, Route, StaticRouter, Switch } from 'react-router-dom'
 import React, { Component } from 'react'
 import styled, { ThemeProvider } from 'styled-components'

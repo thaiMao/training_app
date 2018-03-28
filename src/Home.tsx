@@ -1,5 +1,3 @@
-import 'file-loader!./web-app-manifest.json'
-
 import { Link } from 'react-router-dom'
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
@@ -42,7 +40,6 @@ class Home extends PureComponent<Props> {
             name="apple-mobile-web-app-title"
             content={`${homeScreenTitle}`}
           />
-          <link href="dist/web-app-manifest.json" rel="manifest" />
           <script type="application/ld+json">{schema}</script>
         </Helmet>
         <h1>My Brand</h1>
