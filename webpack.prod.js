@@ -4,6 +4,7 @@ const common = require('./webpack.common.js')
 const webpack = require('webpack')
 const path = require('path')
 const nodeExternals = require('webpack-node-externals')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const serverConfig = {
   context: __dirname,
@@ -71,6 +72,52 @@ const serverConfig = {
 }
 
 const clientConfig = merge(common, {
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        loader: 'awesome-typescript-loader'
+      },
+      {
+        enforce: 'pre',
+        test: /\.jsx?$/,
+        loader: ['eslint-loader', 'source-map-loader'],
+        exclude: [path.resolve(__dirname, 'node_modules')]
+      },
+      {
+        include: [path.resolve(__dirname, 'src')],
+        exclude: [path.resolve(__dirname, 'node_modules')],
+        test: /\.jsx?$/,
+        use: [
+          {
+            loader: 'babel-loader'
+          }
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        })
+      },
+      {
+        test: /\.(png|jpg|gif|json)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.worker\.js$/,
+        use: { loader: 'worker-loader' }
+      }
+    ]
+  },
   plugins: [
     new UglifyJSPlugin({ sourceMap: true }),
     new webpack.DefinePlugin({

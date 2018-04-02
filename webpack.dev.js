@@ -63,6 +63,10 @@ const devConfig = {
             }
           }
         ]
+      },
+      {
+        test: /\.worker\.js$/,
+        use: { loader: 'worker-loader' }
       }
     ]
   },

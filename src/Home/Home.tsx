@@ -4,6 +4,10 @@ import { connect } from 'react-redux'
 import { State } from 'reducers/exercises'
 import { Helmet } from 'react-helmet'
 import { AppleMeta } from 'meta'
+import Worker from 'workers'
+
+const worker: any = new Worker()
+worker.postMessage({ a: 1 })
 
 function mapStateToProps(state: State) {
   return {
