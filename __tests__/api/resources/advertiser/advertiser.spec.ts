@@ -4,7 +4,7 @@ import { runQuery, dropDb } from 'modules/helpers'
 import { User } from 'resources'
 import { Advertiser } from 'db/sql/models'
 
-describe.only('Advertiser', () => {
+describe('Advertiser', () => {
   let user: any
 
   beforeEach(async () => {
@@ -16,7 +16,7 @@ describe.only('Advertiser', () => {
     await dropDb()
   })
 
-  it('should create an Advertiser', async () => {
+  xit('should create an Advertiser', async () => {
     const result = await runQuery(
       `
       mutation CreateAdvertiser($input: CreateAdvertiser!){

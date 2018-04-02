@@ -1,9 +1,18 @@
+import { BrowserRouter } from 'react-router-dom'
+import Loadable from 'react-loadable'
 import React from 'react'
-import { render } from 'react-dom'
+import { hydrate, render } from 'react-dom'
 import App from 'App'
 
-const renderApp = () => {
-  render(<App />, document.getElementById('app'))
+const renderApp = async () => {
+  await Loadable.preloadReady()
+
+  hydrate(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>,
+    document.getElementById('app')
+  )
 }
 
 renderApp()

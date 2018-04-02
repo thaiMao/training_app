@@ -2,12 +2,12 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "*": ["*", "src/*", "api/*"]
+      "*": ["*", "src/*", "api/*", "server/*"]
     },
     "outDir": "./dist/",
     "sourceMap": true,
     "noImplicitAny": true,
-    "module": "es2015",
+    "module": "esnext",
     "target": "es2016",
     "lib": [
       "es5",
@@ -30,5 +30,5 @@
     "allowJs": true,
     "experimentalDecorators": true
   },
-  "include": ["./src/**/*", "./api/**/*", "./__tests__/**/*", "./scripts/**/*"]
+  "include": ["./src/**/*", "./api/**/*", "./__tests__/**/*", "./server/**/*"]
 }

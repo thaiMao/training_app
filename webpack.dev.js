@@ -1,9 +1,19 @@
-const path = require('path')
 const merge = require('webpack-merge')
-const [common, serverConfig] = require('./webpack.common.js')
+const common = require('./webpack.common.js')
+const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { ReactLoadablePlugin } = require('react-loadable/webpack')
 
-const clientConfig = {
+const devConfig = {
   devtool: 'cheap-eval-source-map',
+  entry: [
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server',
+    './src/Client.tsx'
+  ],
   stats: {
     colors: true,
     reasons: true,
@@ -13,7 +23,67 @@ const clientConfig = {
     hot: true,
     publicPath: '/dist/',
     historyApiFallback: true
-  }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        loader: 'awesome-typescript-loader'
+      },
+      {
+        enforce: 'pre',
+        test: /\.jsx?$/,
+        loader: ['eslint-loader', 'source-map-loader'],
+        exclude: [path.resolve(__dirname, 'node_modules')]
+      },
+      {
+        include: [path.resolve(__dirname, 'src')],
+        exclude: [path.resolve(__dirname, 'node_modules')],
+        test: /\.jsx?$/,
+        use: [
+          {
+            loader: 'babel-loader'
+          }
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        })
+      },
+      {
+        test: /\.(png|jpg|gif|json)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
+          }
+        ]
+      }
+    ]
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Production',
+      template: './index.html'
+    }),
+    new ExtractTextPlugin({
+      filename: 'app.bundle.css'
+    }),
+    new ReactLoadablePlugin({
+      filename: './dist/react-loadable.json'
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'manifest',
+      minChunks: Infinity
+    })
+  ]
 }
 
-module.exports = [merge(common, clientConfig), serverConfig]
+module.exports = merge(common, devConfig)
