@@ -5,6 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { ReactLoadablePlugin } = require('react-loadable/webpack')
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 const devConfig = {
   devtool: 'cheap-eval-source-map',
@@ -63,6 +64,10 @@ const devConfig = {
             }
           }
         ]
+      },
+      {
+        test: /\.worker\.js$/,
+        use: { loader: 'worker-loader' }
       }
     ]
   },
@@ -82,7 +87,8 @@ const devConfig = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'manifest',
       minChunks: Infinity
-    })
+    }),
+    new BundleAnalyzerPlugin()
   ]
 }
 

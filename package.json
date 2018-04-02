@@ -40,7 +40,8 @@
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.1",
     "webpack-merge": "^4.1.2",
-    "webpack-node-externals": "^1.6.0"
+    "webpack-node-externals": "^1.6.0",
+    "webpack-bundle-analyzer": "^2.11.1"
   },
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",
@@ -51,7 +52,8 @@
     "test": "jest --coverage",
     "test:report": "open coverage/lcov-report/index.html",
     "test:watch": "jest --watch",
-    "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"src/**/*.{ts, tsx}\"",
+    "format":
+      "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"src/**/*.{ts, tsx}\"",
     "lint": "eslint **/*.{ts, tsx} --quiet",
     "db:migrate": "sequelize db:migrate",
     "sql:migration:create": "sequelize migration:create",
@@ -61,10 +63,7 @@
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/test-setup.js",
-    "collectCoverageFrom": [
-      "**/*.{ts, tsx}",
-      "!**/node_modules/**"
-    ],
+    "collectCoverageFrom": ["**/*.{ts, tsx}", "!**/node_modules/**"],
     "coverageThreshold": {
       "./src": {
         "statements": 50,
@@ -73,31 +72,15 @@
         "lines": 100
       }
     },
-    "moduleDirectories": [
-      "src",
-      "api",
-      "server",
-      "node_modules"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "jsx",
-      "json",
-      "ts",
-      "tsx"
-    ],
-    "modulePaths": [
-      "src",
-      "api"
-    ],
+    "moduleDirectories": ["src", "api", "server", "node_modules"],
+    "moduleFileExtensions": ["js", "jsx", "json", "ts", "tsx"],
+    "modulePaths": ["src", "api"],
     "transform": {
       "^.+\\.tsx?$": "babel-jest",
       "^.+\\.(ts|tsx)$": "<rootDir>/preprocessor.js"
     },
     "testEnvironment": "node",
-    "testMatch": [
-      "**/__tests__/**/*.(ts|tsx|js)"
-    ]
+    "testMatch": ["**/__tests__/**/*.(ts|tsx|js)"]
   },
   "devDependencies": {
     "@types/enzyme": "^3.1.9",
@@ -149,6 +132,7 @@
     "react-test-renderer": "^16.2.0",
     "script-loader": "^0.7.2",
     "source-map-loader": "^0.2.3",
-    "style-loader": "^0.20.3"
+    "style-loader": "^0.20.3",
+    "worker-loader": "^1.1.1"
   }
 }
