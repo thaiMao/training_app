@@ -5,6 +5,7 @@ const webpack = require('webpack')
 const path = require('path')
 const nodeExternals = require('webpack-node-externals')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 const serverConfig = {
   context: __dirname,
@@ -122,7 +123,8 @@ const clientConfig = merge(common, {
     new UglifyJSPlugin({ sourceMap: true }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
-    })
+    }),
+    new BundleAnalyzerPlugin()
   ]
 })
 

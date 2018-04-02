@@ -8,6 +8,9 @@ import Worker from 'workers'
 
 const worker: any = new Worker()
 worker.postMessage({ a: 1 })
+worker.onmessage = (event: any) => {
+  console.log(event.data.result)
+}
 
 function mapStateToProps(state: State) {
   return {
