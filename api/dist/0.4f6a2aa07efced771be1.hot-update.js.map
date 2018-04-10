@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./middleware/index.ts"],"names":[],"mappings":";;;;;;;;;;AAAyD","file":"0.4f6a2aa07efced771be1.hot-update.js","sourcesContent":["export { default as setupMiddleware } from './middleware'\n\n\n\n// WEBPACK FOOTER //\n// ./middleware/index.ts"],"sourceRoot":""}

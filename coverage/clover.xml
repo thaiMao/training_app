@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1521903288693" clover="3.2.0">
-  <project timestamp="1521903288694" name="All files">
-    <metrics statements="233" coveredstatements="57" conditionals="48" coveredconditionals="6" methods="70" coveredmethods="9" elements="351" coveredelements="72" complexity="0" loc="233" ncloc="233" packages="17" files="38" classes="38">
+<coverage generated="1522876783178" clover="3.2.0">
+  <project timestamp="1522876783179" name="All files">
+    <metrics statements="240" coveredstatements="56" conditionals="48" coveredconditionals="6" methods="72" coveredmethods="8" elements="360" coveredelements="70" complexity="0" loc="240" ncloc="240" packages="19" files="40" classes="40">
       <package name="api">
         <metrics statements="32" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <file name="index.ts" path="/Users/Thai/Desktop/training_app/api/index.ts">
@@ -196,19 +196,19 @@
           <metrics statements="15" coveredstatements="13" conditionals="4" coveredconditionals="2" methods="6" coveredmethods="6"/>
           <line num="6" count="4" type="stmt"/>
           <line num="8" count="4" type="stmt"/>
-          <line num="9" count="12" type="stmt"/>
-          <line num="10" count="12" type="stmt"/>
-          <line num="11" count="12" type="cond" truecount="1" falsecount="1"/>
+          <line num="9" count="8" type="stmt"/>
+          <line num="10" count="8" type="stmt"/>
+          <line num="11" count="8" type="cond" truecount="1" falsecount="1"/>
           <line num="12" count="0" type="stmt"/>
-          <line num="14" count="12" type="stmt"/>
-          <line num="15" count="12" type="cond" truecount="1" falsecount="1"/>
+          <line num="14" count="8" type="stmt"/>
+          <line num="15" count="8" type="cond" truecount="1" falsecount="1"/>
           <line num="16" count="0" type="stmt"/>
-          <line num="18" count="12" type="stmt"/>
+          <line num="18" count="8" type="stmt"/>
           <line num="24" count="4" type="stmt"/>
-          <line num="25" count="6" type="stmt"/>
-          <line num="29" count="6" type="stmt"/>
+          <line num="25" count="4" type="stmt"/>
+          <line num="29" count="4" type="stmt"/>
           <line num="32" count="4" type="stmt"/>
-          <line num="33" count="3" type="stmt"/>
+          <line num="33" count="2" type="stmt"/>
         </file>
         <file name="index.ts" path="/Users/Thai/Desktop/training_app/api/modules/helpers/index.ts">
           <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -221,7 +221,7 @@
         </file>
       </package>
       <package name="api.resources.advertiser">
-        <metrics statements="14" coveredstatements="3" conditionals="4" coveredconditionals="0" methods="5" coveredmethods="1"/>
+        <metrics statements="14" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="5" coveredmethods="0"/>
         <file name="advertiserTypes.ts" path="/Users/Thai/Desktop/training_app/api/resources/advertiser/advertiserTypes.ts">
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
           <line num="1" count="6" type="stmt"/>
@@ -230,12 +230,12 @@
           <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         </file>
         <file name="resolvers.ts" path="/Users/Thai/Desktop/training_app/api/resources/advertiser/resolvers.ts">
-          <metrics statements="13" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="5" coveredmethods="1"/>
+          <metrics statements="13" coveredstatements="1" conditionals="4" coveredconditionals="0" methods="5" coveredmethods="0"/>
           <line num="8" count="0" type="stmt"/>
           <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
           <line num="15" count="0" type="stmt"/>
           <line num="17" count="0" type="stmt"/>
-          <line num="22" count="1" type="stmt"/>
+          <line num="22" count="0" type="stmt"/>
           <line num="26" count="0" type="stmt"/>
           <line num="28" count="0" type="stmt"/>
           <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
@@ -398,6 +398,25 @@
           <line num="6" count="0" type="stmt"/>
           <line num="8" count="0" type="stmt"/>
           <line num="13" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="server">
+        <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <file name="index.ts" path="/Users/Thai/Desktop/training_app/server/index.ts">
+          <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="9" count="0" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.workers">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <file name="index.ts" path="/Users/Thai/Desktop/training_app/src/workers/index.ts">
+          <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
         </file>
       </package>
     </metrics>

@@ -5,7 +5,7 @@ const StartServerPlugin = require('start-server-webpack-plugin')
 
 const common = {
   context: __dirname,
-  entry: ['webpack/hot/poll?1000', './api/index.ts'],
+  entry: ['webpack/hot/poll?1000', './index.ts'],
   watch: true,
   target: 'node',
   node: {
@@ -20,7 +20,7 @@ const common = {
   },
   resolve: {
     extensions: ['.ts', '.js', '.json', '.gql', '.graphql'],
-    modules: [path.resolve(__dirname, 'api'), 'node_modules']
+    modules: [path.resolve(__dirname), 'node_modules']
   },
   module: {
     rules: [
@@ -39,11 +39,11 @@ const common = {
         enforce: 'pre',
         test: /\.js$/,
         loader: ['eslint-loader', 'source-map-loader'],
-        include: [path.resolve(__dirname, 'api')],
+        include: [path.resolve(__dirname)],
         exclude: [path.resolve(__dirname, 'node_modules')]
       },
       {
-        include: [path.resolve(__dirname, 'api')],
+        include: [path.resolve(__dirname)],
         exclude: [path.resolve(__dirname, 'node_modules')],
         test: /\.js$/,
         use: [

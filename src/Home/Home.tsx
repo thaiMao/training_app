@@ -5,6 +5,7 @@ import { State } from 'reducers/exercises'
 import { Helmet } from 'react-helmet'
 import { AppleMeta } from 'meta'
 import Worker from 'workers'
+import * as utils from 'app-utils'
 
 const worker: any = new Worker()
 worker.postMessage({ a: 1 })
@@ -24,7 +25,32 @@ interface Props {
 
 @(connect(mapStateToProps) as any)
 class Home extends PureComponent<Props> {
-  componentDidMount() {}
+  componentDidMount() {
+    const URL = 'http://localhost:3000/'
+    const request = new Request(URL)
+
+    fetch(request).then(function(response) {
+      response.json().then(function(data) {
+        console.log('Server response: ', data)
+      })
+    })
+  }
+
+  async handleCreateUser() {
+    const user = { name: 'Tony Montana' }
+    const body = JSON.stringify(user)
+    const postUserOptions = utils.Fetch.postJSONOptions(body)
+    const createOneUser = utils.Fetch.fetchUser(postUserOptions)
+
+    try {
+      const data = await createOneUser
+      const jsonData = await data.json()
+      console.log('Server POST response: ', jsonData)
+      // TODO handle different status responses with appropriate messages
+    } catch (error) {
+      console.error('Network error', error)
+    }
+  }
 
   render() {
     const homeScreenTitle = 'Traning App'
@@ -51,6 +77,7 @@ class Home extends PureComponent<Props> {
         </Helmet>
         <h1>My Brand</h1>
         <button>Login</button>
+        <button onClick={this.handleCreateUser}>Create New User</button>
         <Link to="/about">About</Link>
         <link
           href="https://placehold.it/152"

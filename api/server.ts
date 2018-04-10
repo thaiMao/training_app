@@ -23,4 +23,8 @@ app.get('/', (req, res) => {
   res.json({ ok: true })
 })
 
+app.post('/', function (req, res) {
+  res.send('POST request to the homepage')
+})
+
 export default app

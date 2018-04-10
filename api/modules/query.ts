@@ -3,8 +3,13 @@ import { mergeDeep } from 'immutable'
 const testData = { message: 'hello' }
 
 export const controllers = {
-  createOne(model: any, body: any) {
-    return model.create(body)
+  async createOne(model: any, body: any) {
+    try {
+      return await model.create(body)
+    } catch (err) {
+      console.log(err)
+      return { error: 'duplicate - already exists' }
+    }
   },
   updateOne(docToUpdate: any, update: any) {
     const updatedDocument = mergeDeep(docToUpdate, update)

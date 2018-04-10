@@ -4,7 +4,7 @@ import { runQuery, dropDb } from 'modules/helpers'
 import { User } from 'resources'
 import { Advertiser } from 'db/sql/models'
 
-describe('Advertiser', () => {
+describe.skip('Advertiser', () => {
   let user: any
 
   beforeEach(async () => {
