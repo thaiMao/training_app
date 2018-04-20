@@ -1,6 +1,11 @@
 /node_modules/
 /dist/
+/dist-server/
 /config/
+key.pem
+cert.pem
+/private/*
+!private/README.md
 
 yarn.lock
 yarn-error.log

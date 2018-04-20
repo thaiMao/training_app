@@ -6,12 +6,15 @@ import { Helmet } from 'react-helmet'
 import { AppleMeta } from 'meta'
 import Worker from 'workers'
 import * as utils from 'app-utils'
+import { Service } from 'workers/service'
 
 const worker: any = new Worker()
 worker.postMessage({ a: 1 })
 worker.onmessage = (event: any) => {
   console.log(event.data.result)
 }
+
+Service()
 
 function mapStateToProps(state: State) {
   return {
