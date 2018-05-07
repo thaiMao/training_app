@@ -1,5 +1,6 @@
 ///<reference path="typings.d.ts" />
-import 'file-loader!./web-app-manifest.json'
+import './web-app-manifest.json'
+
 // import 'add-to-homescreen/addtohomescreen.js'
 // import 'styles/addtohomescreen.css'
 import { Route, Switch } from 'react-router-dom'

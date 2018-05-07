@@ -1,6 +1,5 @@
 ///<reference path="typings.d.ts" />
 /* eslint no-console:0 */
-
 import express from 'express'
 import { Capture } from 'react-loadable'
 import morgan from 'morgan'
@@ -14,7 +13,7 @@ import stats from '../dist/react-loadable.json'
 const app = express()
 
 app.use('/', morgan('tiny'))
-app.use('/dist', express.static('./dist'))
+app.use(express.static('dist'))
 
 app.use((req, res) => {
   console.log('request url: ', req.url)
@@ -46,18 +45,19 @@ app.use((req, res) => {
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
       <meta name="theme-color" content="#2d89ef" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
-      <link href="dist/web-app-manifest.json" rel="manifest" />
+      <link href="web-app-manifest.json" rel="manifest" />
+      <link href="asset-manifest.json" rel="manifest" />
     </head>
     
     <body>
       <div id="app">
         ${html}
       </div>
-      <script type="text/javascript" src="dist/manifest.bundle.js"></script>
+      <script type="text/javascript" src="manifest.bundle.js"></script>
       ${bundles
-        .map((bundle: any) => `<script src="dist/${bundle.file}"></script>`)
+        .map((bundle: any) => `<script src="${bundle.file}"></script>`)
         .join('\n')}
-      <script type="text/javascript" src="dist/main.bundle.js"></script></body>
+      <script type="text/javascript" src="main.bundle.js"></script></body>
     </body>
     
     </html>

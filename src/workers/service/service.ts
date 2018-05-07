@@ -4,9 +4,8 @@ async function setupServiceWorker() {
   if ('serviceWorker' in navigator) {
     try {
       console.log('Service worker exists in navigator')
-      // let { serviceWorker: { register } } = navigator
       let registration = await navigator.serviceWorker.register(
-        './dist/service-worker.js'
+        './service-worker.js'
       )
     } catch (error) {
       console.log(error)

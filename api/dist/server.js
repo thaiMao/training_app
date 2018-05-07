@@ -20,7 +20,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "38efcaf2e5f3bbae21e0"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "5e48a422a370b9c394fc"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -675,7 +675,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/dist/";
+/******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// __webpack_hash__
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
@@ -989,7 +989,7 @@ const config = {
 const PRODUCTION_URL = 'https://proddomain.com';
 /* harmony export (immutable) */ __webpack_exports__["b"] = PRODUCTION_URL;
 
-const DEVELOPMENT_URL = 'http://localhost:8080';
+const DEVELOPMENT_URL = 'https://localhost:8080';
 /* harmony export (immutable) */ __webpack_exports__["a"] = DEVELOPMENT_URL;
 
 

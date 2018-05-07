@@ -16,7 +16,7 @@ const common = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'server.js',
-    publicPath: '/dist/'
+    publicPath: ''
   },
   resolve: {
     extensions: ['.ts', '.js', '.json', '.gql', '.graphql'],
