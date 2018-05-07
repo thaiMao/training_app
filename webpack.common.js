@@ -1,8 +1,4 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const webpack = require('webpack')
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { ReactLoadablePlugin } = require('react-loadable/webpack')
 
 const common = {
   context: __dirname,
@@ -13,26 +9,10 @@ const common = {
   target: 'web',
   entry: './src/Client.tsx',
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist/'
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Production',
-      template: './index.html'
-    }),
-    new ExtractTextPlugin({
-      filename: 'app.bundle.css'
-    }),
-    new ReactLoadablePlugin({
-      filename: './dist/react-loadable.json'
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'manifest',
-      minChunks: Infinity
-    })
-  ]
+    filename: 'app.[name]-[hash].bundle.js',
+    path: path.resolve(__dirname, './dist'),
+    publicPath: '/'
+  }
 }
 
 module.exports = common

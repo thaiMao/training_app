@@ -1,11 +1,14 @@
 const merge = require('webpack-merge')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const common = require('./webpack.common.js')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 const path = require('path')
 const nodeExternals = require('webpack-node-externals')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+const { ReactLoadablePlugin } = require('react-loadable/webpack')
+const ManifestPlugin = require('webpack-manifest-plugin')
 
 const serverConfig = {
   context: __dirname,
@@ -73,6 +76,11 @@ const serverConfig = {
 }
 
 const clientConfig = merge(common, {
+  output: {
+    filename: 'app.[name]-[hash].bundle.js',
+    path: path.resolve(__dirname, './dist'),
+    publicPath: '/'
+  },
   module: {
     rules: [
       {
@@ -123,6 +131,20 @@ const clientConfig = merge(common, {
     new UglifyJSPlugin({ sourceMap: true }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Production',
+      template: './index.html'
+    }),
+    new ReactLoadablePlugin({
+      filename: './dist/react-loadable.json'
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'manifest',
+      minChunks: Infinity
+    }),
+    new ManifestPlugin({
+      fileName: 'asset-manifest.json'
     }),
     new BundleAnalyzerPlugin()
   ]

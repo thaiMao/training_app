@@ -5,7 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { ReactLoadablePlugin } = require('react-loadable/webpack')
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+const ManifestPlugin = require('webpack-manifest-plugin')
 
 const devConfig = {
   devtool: 'cheap-eval-source-map',
@@ -22,7 +22,7 @@ const devConfig = {
   },
   devServer: {
     hot: true,
-    publicPath: '/dist/',
+    publicPath: '/',
     historyApiFallback: true
   },
   module: {
@@ -88,7 +88,9 @@ const devConfig = {
       name: 'manifest',
       minChunks: Infinity
     }),
-    new BundleAnalyzerPlugin()
+    new ManifestPlugin({
+      fileName: 'asset-manifest.json'
+    })
   ]
 }
 

@@ -8,14 +8,6 @@ import Worker from 'workers'
 import * as utils from 'app-utils'
 import { Service } from 'workers/service'
 
-const worker: any = new Worker()
-worker.postMessage({ a: 1 })
-worker.onmessage = (event: any) => {
-  console.log(event.data.result)
-}
-
-Service()
-
 function mapStateToProps(state: State) {
   return {
     exercises: state.exercises
@@ -29,14 +21,13 @@ interface Props {
 @(connect(mapStateToProps) as any)
 class Home extends PureComponent<Props> {
   componentDidMount() {
-    const URL = 'http://localhost:3000/'
-    const request = new Request(URL)
+    Service()
 
-    fetch(request).then(function(response) {
-      response.json().then(function(data) {
-        console.log('Server response: ', data)
-      })
-    })
+    const worker: any = new Worker()
+    worker.postMessage({ a: 1 })
+    worker.onmessage = (event: any) => {
+      console.log(event.data.result)
+    }
   }
 
   async handleCreateUser() {
@@ -87,7 +78,7 @@ class Home extends PureComponent<Props> {
           sizes="152*152"
           rel="apple-touch-icon"
         />
-
+        <img src="https://localhost:8080/dist/images/user.png" />
         <pre>
           <code>{JSON.stringify(this.props.exercises, null, 4)}</code>
         </pre>

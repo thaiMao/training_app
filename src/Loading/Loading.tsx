@@ -8,7 +8,7 @@ interface Props {
 
 const Loading: SFC<Props> = props => {
   if (props.error) {
-    return <div>Error</div>
+    return <div>Error {props.error}</div>
   } else if (props.timedOut) {
     return <div>Taking a long time...</div>
   } else if (props.pastDelay) {
