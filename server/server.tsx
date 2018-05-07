@@ -3,6 +3,7 @@
 import express from 'express'
 import { Capture } from 'react-loadable'
 import morgan from 'morgan'
+import helmet from 'helmet'
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom'
@@ -12,6 +13,7 @@ import stats from '../dist/react-loadable.json'
 
 const app = express()
 
+app.use(helmet())
 app.use('/', morgan('tiny'))
 app.use(express.static('dist'))
 

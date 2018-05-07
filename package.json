@@ -21,6 +21,7 @@
     "graphql": "^0.13.2",
     "graphql-tag": "^2.8.0",
     "graphql-tools": "^2.21.0",
+    "helmet": "^3.12.0",
     "html-webpack-plugin": "^2.30.1",
     "immutable": "^immutable@4.0.0-rc.9",
     "jsonwebtoken": "^8.2.0",
@@ -52,19 +53,16 @@
     "webpack-node-externals": "^1.6.0"
   },
   "scripts": {
-    "start":
-      "webpack-dev-server --https --key ./private/key.pem --cert ./private/cert.pem --open --config webpack.dev.js",
+    "start": "webpack-dev-server --https --key ./private/key.pem --cert ./private/cert.pem --open --config webpack.dev.js",
     "start:api": "webpack --config ./api/webpack.dev.js",
     "build": "NODE_ENV=production webpack --config webpack.prod.js",
     "build:api": "webpack --config ./api/webpack.prod.js",
-    "prepcerts":
-      "node ./server/gen-certs.js && rm -rf dist/*.pem && mkdir -p dist && cp private/*.pem dist/",
+    "prepcerts": "node ./server/gen-certs.js && rm -rf dist/*.pem && mkdir -p dist && cp private/*.pem dist/",
     "pre:test": "yarn db:migrate",
     "test": "jest --coverage",
     "test:report": "open coverage/lcov-report/index.html",
     "test:watch": "jest --watch",
-    "format":
-      "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"src/**/*.{ts, tsx}\"",
+    "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"src/**/*.{ts, tsx}\"",
     "lint": "eslint **/*.{ts, tsx} --quiet",
     "db:migrate": "sequelize db:migrate",
     "sql:migration:create": "sequelize migration:create",
@@ -74,7 +72,10 @@
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/test-setup.js",
-    "collectCoverageFrom": ["**/*.{ts, tsx}", "!**/node_modules/**"],
+    "collectCoverageFrom": [
+      "**/*.{ts, tsx}",
+      "!**/node_modules/**"
+    ],
     "coverageThreshold": {
       "./src": {
         "statements": 50,
@@ -83,15 +84,31 @@
         "lines": 100
       }
     },
-    "moduleDirectories": ["src", "api", "server", "node_modules"],
-    "moduleFileExtensions": ["js", "jsx", "json", "ts", "tsx"],
-    "modulePaths": ["src", "api"],
+    "moduleDirectories": [
+      "src",
+      "api",
+      "server",
+      "node_modules"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "ts",
+      "tsx"
+    ],
+    "modulePaths": [
+      "src",
+      "api"
+    ],
     "transform": {
       "^.+\\.tsx?$": "babel-jest",
       "^.+\\.(ts|tsx)$": "<rootDir>/preprocessor.js"
     },
     "testEnvironment": "node",
-    "testMatch": ["**/__tests__/**/*.(ts|tsx|js)"]
+    "testMatch": [
+      "**/__tests__/**/*.(ts|tsx|js)"
+    ]
   },
   "devDependencies": {
     "@types/cors": "^2.8.3",
@@ -100,6 +117,7 @@
     "@types/express-jwt": "^0.0.38",
     "@types/faker": "^4.1.2",
     "@types/graphql": "^0.12.4",
+    "@types/helmet": "^0.0.37",
     "@types/jest": "^22.1.3",
     "@types/jsonwebtoken": "^7.2.5",
     "@types/mongoose": "^5.0.5",
