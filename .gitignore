@@ -1,6 +1,7 @@
 /node_modules/
 /dist/
 /dist-server/
+/api/dist/
 /config/
 key.pem
 cert.pem

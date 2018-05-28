@@ -16,8 +16,6 @@ const INDEX_HTML_URL = new URL(INDEX_HTML_PATH, self.location).toString()
 const userFallbackImage = 'https://localhost:8080/dist/images/fallback.png'
 
 self.addEventListener('install', event => {
-  console.log('install service worker')
-
   event.waitUntil(
     caches.open(currentCache).then(() =>
       Promise.all([
@@ -31,9 +29,6 @@ self.addEventListener('install', event => {
 })
 
 self.addEventListener('activate', event => {
-  console.log('activate service worker')
-  // self.clients.claim()
-  // TODO remove any caches that retired service worker was using
   event.waitUntil(removeUnusedCaches(ALL_CACHES_LIST))
 })
 
@@ -54,8 +49,6 @@ function fetchImageOrFallback(fetchEvent) {
 }
 
 self.addEventListener('fetch', event => {
-  console.log('intercept a network request')
-
   const acceptHeader = event.request.headers.get('accept')
   const requestUrl = new URL(event.request.url)
   const { pathname } = requestUrl
@@ -90,11 +83,28 @@ self.addEventListener('fetch', event => {
         }
 
         caches.open(currentCache).then(cache => {
-          console.log('Hey: ', cache)
+          console.log('Open: ', cache)
         })
 
         return fetch(event.request)
       })
       .catch(err => console.log('Fetch Error: ', err))
   )
+})
+
+self.addEventListener('push', event => {
+  const { data } = event
+  const textData = data.text()
+  if (textData === 'TERMINATE') {
+    self.registration.unregister()
+  }
+
+  if ('notification' in data.json()) {
+    const { notification } = data.json()
+    self.registration.showNotification(notification.title, {
+      body: notification.body,
+      icon: 'images/icon.png',
+      badge: 'images/badge.png'
+    })
+  }
 })

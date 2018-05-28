@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for api/db/sql/db-push.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">api/db/sql</a> db-push.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/24</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import chalk from 'chalk'</span>
+import fs from 'fs'
+<span class="cstat-no" title="statement not covered" >import path from 'path'</span>
+import Sequelize from 'sequelize'
+<span class="cstat-no" title="statement not covered" >import database from 'db/sql/new-database'</span>
+<span class="cstat-no" title="statement not covered" >import getDatabaseModels from 'db/sql/models'</span>
+&nbsp;
+const PROJECT_ROOT_PATH = <span class="cstat-no" title="statement not covered" >path.join(__dirname, '..', '..')</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >function getNewDb(resolve: any, reject: any): void {</span>
+  let <span class="cstat-no" title="statement not covered" >sequelize = database</span>
+<span class="cstat-no" title="statement not covered" >  resolve(sequelize)</span>
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function handleSyncError(err: any) {</span>
+<span class="cstat-no" title="statement not covered" >  process.stderr.write('Problem synchronizing database', err)</span>
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >class PushDb {</span>
+  private <span class="fstat-no" title="function not covered" >open</span>() {
+<span class="cstat-no" title="statement not covered" >    return new Promise(getNewDb)</span>
+  }
+&nbsp;
+  private <span class="cstat-no" title="statement not covered" >_models: any = null</span>
+  db: any
+&nbsp;
+<span class="fstat-no" title="function not covered" >  get </span>models(): any {
+<span class="cstat-no" title="statement not covered" >    if (this._models === null) {</span>
+<span class="cstat-no" title="statement not covered" >      this._models = getDatabaseModels(this.db)</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return this._models</span>
+  }
+&nbsp;
+  public <span class="fstat-no" title="function not covered" >transaction(</span>callback: any) {
+<span class="cstat-no" title="statement not covered" >    return this.db.transaction(callback)</span>
+  }
+&nbsp;
+  public async <span class="fstat-no" title="function not covered" >start</span>() {
+<span class="cstat-no" title="statement not covered" >    this.db = await this.connectToDatabase()</span>
+<span class="cstat-no" title="statement not covered" >    process.stdout.write(chalk.blue('��  Updating database'))</span>
+<span class="cstat-no" title="statement not covered" >    await this.db.sync({ force: true }).catch(handleSyncError)</span>
+<span class="cstat-no" title="statement not covered" >    process.stdout.write(chalk.blue('   Database update complete ✅'))</span>
+  }
+&nbsp;
+  private async <span class="fstat-no" title="function not covered" >connectToDatabase</span>() {
+    const conn: any = <span class="cstat-no" title="statement not covered" >await this.open()</span>
+<span class="cstat-no" title="statement not covered" >    await conn.authenticate()</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      return conn</span>
+    } catch (err) {
+<span class="cstat-no" title="statement not covered" >      process.stderr.write(</span>
+        chalk.red(' - Problem authenticating to database\n', err)
+      )
+<span class="cstat-no" title="statement not covered" >      process.exit(1)</span>
+    }
+  }
+}
+&nbsp;
+export default PushDb
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat May 26 2018 19:27:06 GMT+0100 (BST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

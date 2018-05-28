@@ -1,7 +1,5 @@
 import * as R from 'ramda'
-
-const API_URL = 'http://localhost:3000'
-const USER_URL = `${API_URL}/user`
+import { USER_URL, PUSH_MESSAGE_URL } from 'app-constants'
 
 function setContent(type: string) {
   return {
@@ -22,13 +20,17 @@ const postOptions = curriedSetFetchOptions('POST')
 const postJSONOptions = postOptions(setContent('application/json'))
 
 function invokeFetch(url: string, options: RequestInit) {
-  return fetch(url, options)
+  return fetch(url, options).catch(err =>
+    console.log('Fetch failed to api', err)
+  )
 }
 
 const curriedInvokeFetch = R.curry(invokeFetch)
 const fetchUser = curriedInvokeFetch(USER_URL)
+const sendPushMessage = curriedInvokeFetch(PUSH_MESSAGE_URL)
 
 export default {
   postJSONOptions,
-  fetchUser
+  fetchUser,
+  sendPushMessage
 }

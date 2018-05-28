@@ -1,1 +1,1 @@
-export { default as connect } from './db'
+export { default as connectNoSqlDb } from './db'

@@ -1,6 +1,4 @@
 import {
-  advertiserTypes,
-  advertiserResolvers,
   exerciseTypes,
   exerciseResolvers,
   userTypes,
@@ -18,8 +16,8 @@ const baseSchema = `
 `
 
 export const schema = makeExecutableSchema({
-  typeDefs: [baseSchema, userTypes, exerciseTypes, advertiserTypes],
-  resolvers: mergeDeep(userResolvers, exerciseResolvers, advertiserResolvers)
+  typeDefs: [baseSchema, userTypes, exerciseTypes],
+  resolvers: mergeDeep(userResolvers, exerciseResolvers)
 })
 
 export const graphQLRouter = graphqlExpress(req => ({
