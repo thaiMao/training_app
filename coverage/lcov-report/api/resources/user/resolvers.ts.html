@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">73.33% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>11/15</span>
+        <span class='fraction'>0/17</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>1/2</span>
+        <span class='fraction'>0/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">40% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/5</span>
+        <span class='fraction'>0/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">73.33% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>11/15</span>
+        <span class='fraction'>0/16</span>
       </div>
     </div>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -86,37 +86,37 @@
 41
 42
 43
-44</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+44</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -129,37 +129,37 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { User } from './model'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { User } from './model'</span>
 import { mergeDeep } from 'immutable'
 &nbsp;
-const getUser = async (_: any, { id }: any) =&gt; {
-  const user = await User.findById(id).exec()
+const getUser = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >async (_</span>: any, { id }: any) =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > {</span></span></span>
+  const user = <span class="cstat-no" title="statement not covered" >await User.findById(id).exec()</span>
 &nbsp;
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (!user) {
+<span class="cstat-no" title="statement not covered" >  if (!user) {</span>
 <span class="cstat-no" title="statement not covered" >    throw new Error(`No user id ${id} found`)</span>
   } else {
-    return user
+<span class="cstat-no" title="statement not covered" >    return user</span>
   }
 }
 &nbsp;
-const getAllUsers = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+const getAllUsers = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt;</span> {</span>
 <span class="cstat-no" title="statement not covered" >  return User.find({}).exec()</span>
 }
 &nbsp;
-const createUser = <span class="fstat-no" title="function not covered" >(_</span>: any, { input }: any) =&gt; {
+const createUser = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(_</span>: any, { input }: any) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >  return User.create(input)</span>
 }
 &nbsp;
-const updateUser = (_: any, { input }: any, { user }: any) =&gt; {
-  const { id } = user
-  return User.findByIdAndUpdate(id, input, { new: true })
+const updateUser = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(_</span>: any, { input }: any, { user }: any) =&gt; {</span>
+  const { id } = <span class="cstat-no" title="statement not covered" >user</span>
+<span class="cstat-no" title="statement not covered" >  return User.findByIdAndUpdate(id, input, { new: true })</span>
 }
 &nbsp;
-const removeUser = <span class="fstat-no" title="function not covered" >(_</span>: any, { id }: any) =&gt; {
+const removeUser = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(_</span>: any, { id }: any) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >  return User.findByIdAndRemove(id).exec()</span>
 }
 &nbsp;
-const userResolvers = {
+const userResolvers = <span class="cstat-no" title="statement not covered" >{</span>
   Query: {
     getUser,
     getAllUsers
@@ -178,7 +178,7 @@ export default userResolvers
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Apr 04 2018 22:19:43 GMT+0100 (BST)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat May 26 2018 19:27:06 GMT+0100 (BST)
 </div>
 </div>
 <script src="../../../prettify.js"></script>

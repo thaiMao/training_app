@@ -1,6 +1,6 @@
 import config from 'config'
-import expressJwt from 'express-jwt'
-import jwt from 'jsonwebtoken'
+import * as expressJwt from 'express-jwt'
+import * as jwt from 'jsonwebtoken'
 import { User } from 'resources'
 
 const checkToken = expressJwt({ secret: config.secrets.JWT_SECRET })

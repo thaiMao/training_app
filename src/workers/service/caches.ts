@@ -1,4 +1,4 @@
-const CACHE_VERSION = 16
+const CACHE_VERSION = 2
 const CACHE_PREFIX = `TRA-v${CACHE_VERSION}`
 
 export const ALL_CACHES: any = {
@@ -30,7 +30,6 @@ export function removeUnusedCaches(cacheNamesToKeep: any) {
       return list
     }, [])
     if (toDelete.length > 0) {
-      console.log('SW: Deleting old caches', toDelete)
       return Promise.all(toDelete.map((c: any) => caches.delete(c)))
     } else {
       return Promise.resolve()
@@ -44,7 +43,7 @@ export function removeUnusedCaches(cacheNamesToKeep: any) {
 const ASSET_MANIFEST_URL = `${self.location.protocol}//${
   self.location.host
 }/asset-manifest.json`
-console.log('ASSET_MANIFEST_URL: ', ASSET_MANIFEST_URL)
+
 const RESOURCES_TO_PRECACHE = [
   /^app.*\.js$/,
   /^main\.js$/,
@@ -63,7 +62,6 @@ const RESOURCES_TO_PRECACHE = [
  * @return {boolean}
  */
 function _shouldPrecacheFile(fileName: string) {
-  console.log('_shouldPrecacheFile: ', fileName)
   for (let i = 0; i < RESOURCES_TO_PRECACHE.length; i++) {
     if (RESOURCES_TO_PRECACHE[i].test(fileName)) return true
   }
@@ -89,22 +87,19 @@ export function precacheStaticAssets() {
       // open (get or create) the prefetch cache
       assetNames.push(`https://localhost:8080/`)
       return caches.open(ALL_CACHES.prefetch).then(cache => {
-        console.log('assetNames: ', assetNames, 'cache: ', cache)
-        // add everything we're allowed to pre-cache in install event
-        return cache.addAll(assetNames).catch(err => console.log(err, 'hey'))
+        return cache.addAll(assetNames).catch(err => console.log(err))
       })
     })
 }
 
 export function precacheMenu() {
   // TODO import from fetch.ts
-  const API_URL = 'http://localhost:3000'
+  const API_URL = 'https://localhost:3100'
   const USER_URL = `${API_URL}/user`
 
   const requestMenu = new Request(USER_URL)
 
   return caches.open(ALL_CACHES.menu).then(cache => {
-    console.log('precacheMenu: ', requestMenu)
     // add menu pre-cache in install event
     return cache.add(requestMenu)
   })

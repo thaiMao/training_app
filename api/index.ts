@@ -1,18 +1,22 @@
-import config from 'config'
-import { createServer } from 'http'
-import app from './server'
+import config from './config'
+import ApiServer from './server'
 
-const server = createServer(app)
+async function setupApiServer(apiServer: any) {
+  await apiServer.start()
+  debugger
+  apiServer.listen()
+}
+
+const apiServer = new ApiServer()
+
+setupApiServer(apiServer)
+const app = apiServer.app
 let currentApp = app
-
-server.listen(config.port, () => {
-  console.log(`Express server listening on port ${config.port}`)
-})
 
 if (module.hot) {
   module.hot.accept(['./server'], () => {
-    server.removeListener('request', currentApp)
-    server.on('request', app)
+    apiServer.httpsServer.removeListener('request', currentApp)
+    apiServer.httpsServer.on('request', app)
     currentApp = app
   })
 }

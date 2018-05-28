@@ -111,7 +111,7 @@ const clientConfig = merge(common, {
         })
       },
       {
-        test: /\.(png|jpg|gif|json)$/,
+        test: /\.(png|jpg|gif)$/,
         use: [
           {
             loader: 'file-loader',

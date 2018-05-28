@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/workers/service/caches.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">src/workers/service</a> caches.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/42</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/38</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const CACHE_VERSION = <span class="cstat-no" title="statement not covered" >2</span>
+const CACHE_PREFIX = <span class="cstat-no" title="statement not covered" >`TRA-v${CACHE_VERSION}`</span>
+&nbsp;
+export const <span class="cstat-no" title="statement not covered" >ALL_CACHES: any = {</span>
+  fallbackImages: cacheName('FALLBACK_IMAGES'),
+  prefetch: cacheName('PREFETCH'),
+  fallback: cacheName('FALLBACK'),
+  menu: cacheName('MENU')
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function cacheName(name: string) {</span>
+<span class="cstat-no" title="statement not covered" >  return `${CACHE_PREFIX}-${name}`</span>
+}
+&nbsp;
+export const <span class="cstat-no" title="statement not covered" >ALL_CACHES_LIST = Object.keys(ALL_CACHES).map(<span class="fstat-no" title="function not covered" >k =&gt; <span class="cstat-no" title="statement not covered" ></span>ALL_CACHES[k])</span></span>
+&nbsp;
+/**
+ * Delete all caches other than those whose names are
+ * provided in a list
+ *
+ * @public
+ * @param {string[]} cacheNamesToKeep names of caches to keep
+ * @return {Promise}
+ */
+export function removeUnusedCaches(cacheNamesToKeep: any) {
+<span class="cstat-no" title="statement not covered" >  return caches.keys().then(<span class="fstat-no" title="function not covered" >function(</span>cacheNames): any {</span>
+    let toDelete = <span class="cstat-no" title="statement not covered" >cacheNames.reduce(<span class="fstat-no" title="function not covered" >(l</span>ist: any, thisCache: any) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      if (cacheNamesToKeep.indexOf(thisCache) === -1)</span>
+<span class="cstat-no" title="statement not covered" >        return list.concat(thisCache)</span>
+<span class="cstat-no" title="statement not covered" >      return list</span>
+    }, [])
+<span class="cstat-no" title="statement not covered" >    if (toDelete.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >      console.log('SW: Deleting old caches', toDelete)</span>
+<span class="cstat-no" title="statement not covered" >      return Promise.all(toDelete.map((<span class="fstat-no" title="function not covered" >c: any) =&gt; <span class="cstat-no" title="statement not covered" >caches.delete(c)))</span></span></span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      return Promise.resolve()</span>
+    }
+  })
+}
+&nbsp;
+////////////////////
+// PREFETCH CACHE //
+////////////////////
+const ASSET_MANIFEST_URL = <span class="cstat-no" title="statement not covered" >`${self.location.protocol}//${</span>
+  self.location.host
+}/asset-manifest.json`
+<span class="cstat-no" title="statement not covered" >console.log('ASSET_MANIFEST_URL: ', ASSET_MANIFEST_URL)</span>
+const RESOURCES_TO_PRECACHE = <span class="cstat-no" title="statement not covered" >[</span>
+  /^app.*\.js$/,
+  /^main\.js$/,
+  /^manifest\.js$/,
+  /^app\.css$/,
+  /^web-app-manifest\.json$/,
+  /^img\/[\w0-9\-_]+.(png|jpg|gif|bmp)$/
+]
+&nbsp;
+/**
+ * Check whether a given filename represents a resource
+ * that should be precached
+ *
+ * @private
+ * @param {string} fileName
+ * @return {boolean}
+ */
+<span class="fstat-no" title="function not covered" >function _shouldPrecacheFile(fileName: string) {</span>
+<span class="cstat-no" title="statement not covered" >  console.log('_shouldPrecacheFile: ', fileName)</span>
+<span class="cstat-no" title="statement not covered" >  for (let i = 0; i &lt; RESOURCES_TO_PRECACHE.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >    if (RESOURCES_TO_PRECACHE[i].test(fileName)) <span class="cstat-no" title="statement not covered" >return true</span></span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return false</span>
+}
+&nbsp;
+export<span class="fstat-no" title="function not covered" > function precacheStaticAssets() {</span>
+<span class="cstat-no" title="statement not covered" >  return fetch(ASSET_MANIFEST_URL)</span>
+    .then(<span class="fstat-no" title="function not covered" >response =&gt; <span class="cstat-no" title="statement not covered" ></span>response.json())</span>
+    .then(<span class="fstat-no" title="function not covered" >assetManifestJson =&gt;</span> {
+      // get the canonical names of the assets
+      let assetNames = <span class="cstat-no" title="statement not covered" >Object.keys(assetManifestJson)</span>
+        .filter(_shouldPrecacheFile) // figure out what to keep
+        .map(<span class="fstat-no" title="function not covered" >k =&gt;</span> {
+          let raw = <span class="cstat-no" title="statement not covered" >assetManifestJson[k]</span>
+<span class="cstat-no" title="statement not covered" >          if (raw.startsWith('.')) {</span>
+<span class="cstat-no" title="statement not covered" >            return raw.substring(1)</span>
+          } else {
+<span class="cstat-no" title="statement not covered" >            return `https://localhost:8080${raw}`</span>
+          }
+        }) // get the full filenames
+      // open (get or create) the prefetch cache
+<span class="cstat-no" title="statement not covered" >      assetNames.push(`https://localhost:8080/`)</span>
+<span class="cstat-no" title="statement not covered" >      return caches.open(ALL_CACHES.prefetch).then(<span class="fstat-no" title="function not covered" >cache =&gt;</span> {</span>
+<span class="cstat-no" title="statement not covered" >        console.log('assetNames: ', assetNames, 'cache: ', cache)</span>
+        // add everything we're allowed to pre-cache in install event
+<span class="cstat-no" title="statement not covered" >        return cache.addAll(assetNames).catch(<span class="fstat-no" title="function not covered" >err =&gt; <span class="cstat-no" title="statement not covered" ></span>console.log(err, 'hey'))</span></span>
+      })
+    })
+}
+&nbsp;
+export<span class="fstat-no" title="function not covered" > function precacheMenu() {</span>
+  // TODO import from fetch.ts
+  const API_URL = <span class="cstat-no" title="statement not covered" >'https://localhost:3100'</span>
+  const USER_URL = <span class="cstat-no" title="statement not covered" >`${API_URL}/user`</span>
+&nbsp;
+  const requestMenu = <span class="cstat-no" title="statement not covered" >new Request(USER_URL)</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return caches.open(ALL_CACHES.menu).then(<span class="fstat-no" title="function not covered" >cache =&gt;</span> {</span>
+<span class="cstat-no" title="statement not covered" >    console.log('precacheMenu: ', requestMenu)</span>
+    // add menu pre-cache in install event
+<span class="cstat-no" title="statement not covered" >    return cache.add(requestMenu)</span>
+  })
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat May 26 2018 19:27:06 GMT+0100 (BST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

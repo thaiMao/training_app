@@ -1,10 +1,8 @@
-import mongoose from 'mongoose'
-mongoose.Promise = global.Promise
+import * as mongoose from 'mongoose'
+;(mongoose as any).Promise = global.Promise
 
 const connect = (config: any) => {
-  return mongoose.connect(config.db.url, {
-    useMongoClient: true
-  })
+  return mongoose.connect(config.db.url)
 }
 
 export default connect

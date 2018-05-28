@@ -37,9 +37,8 @@ class Home extends PureComponent<Props> {
     const createOneUser = utils.Fetch.fetchUser(postUserOptions)
 
     try {
-      const data = await createOneUser
+      const data: any = await createOneUser
       const jsonData = await data.json()
-      console.log('Server POST response: ', jsonData)
       // TODO handle different status responses with appropriate messages
     } catch (error) {
       console.error('Network error', error)
@@ -78,7 +77,6 @@ class Home extends PureComponent<Props> {
           sizes="152*152"
           rel="apple-touch-icon"
         />
-        <img src="https://localhost:8080/dist/images/user.png" />
         <pre>
           <code>{JSON.stringify(this.props.exercises, null, 4)}</code>
         </pre>

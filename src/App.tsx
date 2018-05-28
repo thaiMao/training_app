@@ -1,5 +1,5 @@
 ///<reference path="typings.d.ts" />
-import './web-app-manifest.json'
+import 'file-loader?name=./web-app-manifest.json!./web-app-manifest.json'
 
 // import 'add-to-homescreen/addtohomescreen.js'
 // import 'styles/addtohomescreen.css'
@@ -36,6 +36,12 @@ const Home = Loadable({
   timeout: 10000
 })
 
+const Admin = Loadable({
+  loader: () => import('Components/Admin/Admin'),
+  loading: Loading,
+  timeout: 10000
+})
+
 const NotFound = Loadable({
   loader: () => import('NotFound'),
   loading: Loading,
@@ -54,8 +60,9 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/count" component={Count} />
-            <Route path="/:id" component={Exercise} />
             <Route path="/about" component={About} />
+            <Route path="/admin" component={Admin} />
+            <Route path="/:id" component={Exercise} />
             <Route component={NotFound} />
           </Switch>
         </ThemeProvider>

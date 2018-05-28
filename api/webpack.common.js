@@ -33,7 +33,7 @@ const common = {
       },
       {
         test: /\.ts$/,
-        loader: 'awesome-typescript-loader'
+        loader: 'awesome-typescript-loader?configFileName=tsconfig.json'
       },
       {
         enforce: 'pre',

@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import { Schema, model } from 'mongoose'
 
 export const schema = {
   name: {
@@ -8,6 +8,6 @@ export const schema = {
   }
 }
 
-const goalSchema = new mongoose.Schema(schema)
+const goalSchema = new Schema(schema)
 
-export const Goal = mongoose.model('goal', goalSchema)
+export const Goal = model('goal', goalSchema)

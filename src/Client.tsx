@@ -1,5 +1,5 @@
 import { BrowserRouter } from 'react-router-dom'
-import Loadable from 'react-loadable'
+import * as Loadable from 'react-loadable'
 import React from 'react'
 import { hydrate, render } from 'react-dom'
 import App from 'App'

@@ -20,39 +20,141 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>0/16</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>0/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>0/16</span>
       </div>
     </div>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
-2</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export { default as Advertiser } from './advertiser'
+export { default as PushSubscription } from './push-subscription'
+&nbsp;
+<span class="cstat-no" title="statement not covered" >import fs from 'fs'</span>
+<span class="cstat-no" title="statement not covered" >import path from 'path'</span>
+<span class="cstat-no" title="statement not covered" >import Sequelize from 'sequelize'</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >function removeNonModelFiles(file: any) {</span>
+<span class="cstat-no" title="statement not covered" >  return file.indexOf('.') !== 0 &amp;&amp; file !== 'index.ts'</span>
+}
+&nbsp;
+function getDatabaseModels(sequelize: any) {
+  let db: any = <span class="cstat-no" title="statement not covered" >{}</span>
+  let modelFiles = <span class="cstat-no" title="statement not covered" >fs</span>
+    .readdirSync('api/db/sql/models') //TODO set programatically
+    .filter(removeNonModelFiles)
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  modelFiles.forEach(<span class="fstat-no" title="function not covered" >file =&gt;</span> {</span>
+    let model = <span class="cstat-no" title="statement not covered" >sequelize.import(path.join('..', 'db/sql/models', file)) //TODO set programatically</span>
+<span class="cstat-no" title="statement not covered" >    db[model.name] = model</span>
+  })
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  Object.keys(db).forEach(<span class="fstat-no" title="function not covered" >modelName =&gt;</span> {</span>
+<span class="cstat-no" title="statement not covered" >    if ('associate' in db[modelName]) {</span>
+<span class="cstat-no" title="statement not covered" >      db[modelName].associate(db)</span>
+    }
+<span class="cstat-no" title="statement not covered" >    db[modelName].sync()</span>
+  })
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  db.sequelize = sequelize</span>
+<span class="cstat-no" title="statement not covered" >  db.Sequelize = Sequelize</span>
+<span class="cstat-no" title="statement not covered" >  return db</span>
+}
+&nbsp;
+export default getDatabaseModels
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Apr 04 2018 22:19:43 GMT+0100 (BST)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat May 26 2018 19:27:06 GMT+0100 (BST)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>

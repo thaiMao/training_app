@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for api/notification.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">api</a> notification.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/28</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import chalk from 'chalk'
+<span class="cstat-no" title="statement not covered" >import path from 'path'</span>
+const webpush = <span class="cstat-no" title="statement not covered" >require('web-push')</span>
+&nbsp;
+let VAPID
+&nbsp;
+<span class="cstat-no" title="statement not covered" >if (process.env.VAPID) {</span>
+<span class="cstat-no" title="statement not covered" >  VAPID = JSON.parse(process.env.VAPID)</span>
+} else {
+  let pth = <span class="cstat-no" title="statement not covered" >path.join('..', 'private', 'vapid')</span>
+<span class="cstat-no" title="statement not covered" >  try {</span>
+    //VAPID = require(pth) TODO not working
+<span class="cstat-no" title="statement not covered" >    VAPID = require('../private/vapid')</span>
+  } catch (error) {
+<span class="cstat-no" title="statement not covered" >    process.stderr.write(</span>
+      chalk.bgRed.white('ERROR!: VAPID keys could not be loaded')
+    )
+<span class="cstat-no" title="statement not covered" >    process.stderr.write(</span>
+      chalk.red(
+        `  ↪ Expected to find keys in ${pth}.json\n    Make sure to run `
+      ) +
+        chalk.yellow('npm run prepvapid') +
+        chalk.red(' which should create this file for you')
+    )
+<span class="cstat-no" title="statement not covered" >    process.exit(1)</span>
+  }
+}
+&nbsp;
+let PushSubscription: any = <span class="cstat-no" title="statement not covered" >null</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >webpush.setVapidDetails(</span>
+  'mailto:maot.tm@gmail.com',
+  VAPID.publicKey,
+  VAPID.privateKey
+)
+&nbsp;
+class NotificationManager {
+  api: any
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor(</span>api: any) {
+<span class="cstat-no" title="statement not covered" >    this.api = api</span>
+<span class="cstat-no" title="statement not covered" >    PushSubscription = this.api.db.models['PushSubscription']</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  push(</span>{ title, body }: any) {
+<span class="cstat-no" title="statement not covered" >    return PushSubscription.findAll()</span>
+      .then((<span class="fstat-no" title="function not covered" >subscriptions: any) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        subscriptions.forEach((<span class="fstat-no" title="function not covered" >subs: any) =&gt; {</span></span>
+          let record = <span class="cstat-no" title="statement not covered" >subs.get({ plain: true })</span>
+<span class="cstat-no" title="statement not covered" >          record.keys = JSON.parse(record.keys)</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          return webpush</span>
+            .sendNotification(
+              record,
+              JSON.stringify({
+                notification: {
+                  title,
+                  body
+                }
+              })
+            )
+            .catch((<span class="fstat-no" title="function not covered" >err: any) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >              if (err.statusCode === 410) {</span>
+<span class="cstat-no" title="statement not covered" >                console.log('deleteSubscriptionFromDatabase ', subs.id)</span>
+<span class="cstat-no" title="statement not covered" >                subs.destroy()</span>
+              } else {
+<span class="cstat-no" title="statement not covered" >                console.log('Subscription is no longer valid: ', err)</span>
+              }
+            })
+        })
+      })
+      .then(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>this)</span>
+  }
+<span class="fstat-no" title="function not covered" >  pushWithDelay(</span>delay: any, info: any) {
+<span class="cstat-no" title="statement not covered" >    return new Promise(<span class="fstat-no" title="function not covered" >resolve =&gt;</span> {</span>
+<span class="cstat-no" title="statement not covered" >      setTimeout(<span class="fstat-no" title="function not covered" >() =&gt;</span> {</span>
+        let pushPromise = <span class="cstat-no" title="statement not covered" >this.push(info)</span>
+<span class="cstat-no" title="statement not covered" >        resolve(pushPromise)</span>
+      }, delay)
+    })
+  }
+}
+&nbsp;
+export default NotificationManager
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat May 26 2018 19:27:06 GMT+0100 (BST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

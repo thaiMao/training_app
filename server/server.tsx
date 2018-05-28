@@ -18,7 +18,6 @@ app.use('/', morgan('tiny'))
 app.use(express.static('dist'))
 
 app.use((req, res) => {
-  console.log('request url: ', req.url)
   let modules: any = []
   const context: any = {}
   const html = ReactDOMServer.renderToString(
@@ -28,8 +27,6 @@ app.use((req, res) => {
       </StaticRouter>
     </Capture>
   )
-
-  console.log('modules: ', modules)
 
   const bundles = getBundles(stats, modules)
 

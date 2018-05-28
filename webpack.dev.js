@@ -29,7 +29,7 @@ const devConfig = {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: 'awesome-typescript-loader'
+        loader: 'awesome-typescript-loader?configFileName=tsconfig.client.json'
       },
       {
         enforce: 'pre',
@@ -55,7 +55,7 @@ const devConfig = {
         })
       },
       {
-        test: /\.(png|jpg|gif|json)$/,
+        test: /\.(png|jpg|gif)$/,
         use: [
           {
             loader: 'file-loader',
