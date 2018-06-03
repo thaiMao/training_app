@@ -4,7 +4,6 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { ReactLoadablePlugin } = require('react-loadable/webpack')
 const ManifestPlugin = require('webpack-manifest-plugin')
 
 const devConfig = {
@@ -80,9 +79,6 @@ const devConfig = {
     }),
     new ExtractTextPlugin({
       filename: 'app.bundle.css'
-    }),
-    new ReactLoadablePlugin({
-      filename: './dist/react-loadable.json'
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'manifest',

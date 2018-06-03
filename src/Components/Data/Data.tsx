@@ -48,7 +48,7 @@ class Data extends Component<Props, State> {
     this.setState(state => ({ open: false }))
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchStarWarsPlanetsRequest()
     this.props.confirmFetchRequest()
   }

@@ -6,7 +6,6 @@ import { Helmet } from 'react-helmet'
 import { AppleMeta } from 'meta'
 import Worker from 'workers'
 import * as utils from 'app-utils'
-import { Service } from 'workers/service'
 import { Data } from 'Components/Data'
 
 function mapStateToProps(state: State) {
@@ -22,6 +21,7 @@ interface Props {
 @(connect(mapStateToProps) as any)
 class Home extends PureComponent<Props> {
   componentDidMount() {
+    const Service = require('workers/service')
     Service()
 
     const worker: any = new Worker()

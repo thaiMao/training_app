@@ -9,7 +9,7 @@ import ReactDOMServer from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom'
 import { getBundles } from 'react-loadable/webpack'
 import App from 'App'
-import stats from '../dist/react-loadable.json'
+import stats from 'dist/react-loadable.json'
 
 const app = express()
 
@@ -18,6 +18,7 @@ app.use('/', morgan('tiny'))
 app.use(express.static('dist'))
 
 app.use((req, res) => {
+  debugger
   let modules: any = []
   const context: any = {}
   const html = ReactDOMServer.renderToString(
@@ -29,7 +30,6 @@ app.use((req, res) => {
   )
 
   const bundles = getBundles(stats, modules)
-
   if (context.url) {
     res.redirect(301, context.url)
   }

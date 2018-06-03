@@ -22,7 +22,7 @@ self.addEventListener('install', event => {
         precacheMenu(),
         // cache.add(userFallbackImage),
         precacheStaticAssets()
-      ])
+      ]).catch(err => console.log(err))
     )
   )
   // event.waitUntil(self.skipWaiting())
@@ -86,7 +86,7 @@ self.addEventListener('fetch', event => {
           console.log('Open: ', cache)
         })
 
-        return fetch(event.request)
+        return fetch(event.request).catch(err => console.log(err))
       })
       .catch(err => console.log('Fetch Error: ', err))
   )

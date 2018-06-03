@@ -1,3 +1,5 @@
+require('es6-promise').polyfill()
+require('isomorphic-fetch')
 import { createMethod } from 'helpers/api/helpers'
 import { PEOPLE_URL, PLANETS_URL } from './urls'
 
