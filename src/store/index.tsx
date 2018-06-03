@@ -1,6 +1,11 @@
-import { createStore } from 'redux'
-import { exercises } from 'reducers'
+import { createStore, applyMiddleware } from 'redux'
+import createSagaMiddleware from 'redux-saga'
+import rootReducer from 'reducers'
+import { testSaga } from 'sagas'
+import { Api } from 'helpers'
 
-const store = createStore(exercises)
+const sagaMiddleware = createSagaMiddleware()
 
-export default store
+export default createStore(rootReducer, applyMiddleware(sagaMiddleware))
+
+sagaMiddleware.run(testSaga)

@@ -7,6 +7,7 @@ import { AppleMeta } from 'meta'
 import Worker from 'workers'
 import * as utils from 'app-utils'
 import { Service } from 'workers/service'
+import { Data } from 'Components/Data'
 
 function mapStateToProps(state: State) {
   return {
@@ -77,6 +78,7 @@ class Home extends PureComponent<Props> {
           sizes="152*152"
           rel="apple-touch-icon"
         />
+        <Data />
         <pre>
           <code>{JSON.stringify(this.props.exercises, null, 4)}</code>
         </pre>

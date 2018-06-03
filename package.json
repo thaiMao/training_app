@@ -41,6 +41,7 @@
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
+    "redux-saga": "^0.16.0",
     "sequelize": "^4.37.1",
     "start-server-webpack-plugin": "^2.2.1",
     "styled-components": "^3.0.2",
@@ -55,21 +56,18 @@
     "webpack-node-externals": "^1.6.0"
   },
   "scripts": {
-    "start":
-      "webpack-dev-server --https --key ./private/key.pem --cert ./private/cert.pem --open --config webpack.dev.js",
+    "start": "webpack-dev-server --https --key ./private/key.pem --cert ./private/cert.pem --open --config webpack.dev.js",
     "prod": "node dist-server/index.js",
     "start:api": "webpack --config ./api/webpack.dev.js",
     "build": "NODE_ENV=production webpack --config webpack.prod.js",
     "build:api": "webpack --config ./api/webpack.prod.js",
-    "prepcerts":
-      "node ./server/gen-certs.js && rm -rf dist/*.pem && mkdir -p dist && cp private/*.pem dist/",
+    "prepcerts": "node ./server/gen-certs.js && rm -rf dist/*.pem && mkdir -p dist && cp private/*.pem dist/",
     "prepvapid": "web-push generate-vapid-keys --json > ./private/vapid.json",
     "pre:test": "yarn db:migrate",
     "test": "jest",
     "test:report": "open coverage/lcov-report/index.html",
     "test:watch": "jest --watch",
-    "format":
-      "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"src/**/*.{ts, tsx}\"",
+    "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"src/**/*.{ts, tsx}\"",
     "lint": "eslint **/*.{ts, tsx} --quiet",
     "sql:migration:create": "sequelize migration:create",
     "sql:migration:test": "NODE_ENV=test yarn sql:migration:create",
@@ -79,7 +77,10 @@
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/test-setup.js",
-    "collectCoverageFrom": ["**/*.{ts, tsx}", "!**/node_modules/**"],
+    "collectCoverageFrom": [
+      "**/*.{ts, tsx}",
+      "!**/node_modules/**"
+    ],
     "coverageThreshold": {
       "./src": {
         "statements": 50,
@@ -91,9 +92,24 @@
     "moduleNameMapper": {
       "^~/(.*)$": "<rootDir>/src/$1"
     },
-    "moduleDirectories": ["src", "api", "server", "node_modules"],
-    "moduleFileExtensions": ["js", "jsx", "json", "ts", "tsx", "node"],
-    "modulePaths": ["<rootDir>/src", "<rootDir>/api"],
+    "moduleDirectories": [
+      "src",
+      "api",
+      "server",
+      "node_modules"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "ts",
+      "tsx",
+      "node"
+    ],
+    "modulePaths": [
+      "<rootDir>/src",
+      "<rootDir>/api"
+    ],
     "transform": {
       "^.+\\.tsx?$": "ts-jest",
       "^.+\\.(ts|tsx)$": "<rootDir>/preprocessor.js"
@@ -148,6 +164,7 @@
     "faker": "^4.1.0",
     "file-loader": "^1.1.11",
     "jest": "^22.4.2",
+    "jest-fetch-mock": "^1.6.2",
     "jest-styled-components": "^5.0.1",
     "jsdom": "^11.6.1",
     "module-resolver": "^1.0.0",

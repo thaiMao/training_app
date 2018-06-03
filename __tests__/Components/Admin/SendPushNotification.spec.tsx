@@ -11,7 +11,7 @@ import 'jest-styled-components'
 
 const fakePushNotification = {
   title: 'This is a test title',
-  message: 'This is a test message'
+  body: 'This is a test message'
 }
 
 describe('<SendPushNotification />', () => {

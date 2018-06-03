@@ -25,3 +25,5 @@ export const createAPIEndpoint = R.curry(createUrl)(
   API.port,
   API.domain
 )
+
+export const createThirdPartyEndpoint = R.curry(createUrl)
