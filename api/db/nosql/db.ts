@@ -1,4 +1,4 @@
-import * as mongoose from 'mongoose'
+import mongoose from 'mongoose'
 ;(mongoose as any).Promise = global.Promise
 
 const connect = (config: any) => {

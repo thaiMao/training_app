@@ -5,8 +5,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
+const { ReactLoadablePlugin } = require('react-loadable/webpack')
 
-const devConfig = {
+const devClient = {
   devtool: 'cheap-eval-source-map',
   entry: [
     'react-hot-loader/patch',
@@ -71,8 +72,8 @@ const devConfig = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       title: 'Production',
       template: './index.html'
@@ -86,8 +87,24 @@ const devConfig = {
     }),
     new ManifestPlugin({
       fileName: 'asset-manifest.json'
+    }),
+    new ReactLoadablePlugin({
+      filename: './dist/loadable.json'
     })
   ]
 }
 
-module.exports = merge(common, devConfig)
+const client = merge(common.Client, devClient)
+
+const devServer = {
+  devtool: 'source-map',
+  stats: {
+    colors: true,
+    reasons: true,
+    chunks: true
+  }
+}
+
+const server = merge(common.Server, devServer)
+
+module.exports = [client, server]

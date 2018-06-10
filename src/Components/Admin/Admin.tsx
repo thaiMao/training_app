@@ -9,15 +9,13 @@ function handleOnSubmit(notification: any): void {
   Fetch.sendPushMessage(init)
 }
 
-class Admin extends Component<Props> {
-  public render() {
-    return (
-      <React.Fragment>
-        <h1>Admin Page</h1>
-        <SendPushNotification onSubmit={handleOnSubmit} />
-      </React.Fragment>
-    )
-  }
+function Admin() {
+  return (
+    <React.Fragment>
+      <h1>Admin Page</h1>
+      <SendPushNotification onSubmit={handleOnSubmit} />
+    </React.Fragment>
+  )
 }
 
 export default Admin

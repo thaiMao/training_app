@@ -5,33 +5,38 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome",
+      "url": "https://localhost:8443",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
       "type": "node",
       "request": "launch",
-      "name": "TS File",
-      "args": ["${relativeFile}"],
+      "name": "Launch TS File",
+      //"runtimeExecutable": "${workspaceRoot}/node_modules/.bin/ts-node",
       "runtimeArgs": [
         "-r",
         "tsconfig-paths/register",
         "-r",
         "ts-node/register"
       ],
+      "args": ["${workspaceFolder}/server/index.ts"],
+      //"outFiles": ["${workspaceFolder}/dist/server/**/*.*"],
       "sourceMaps": true,
-      "cwd": "${workspaceRoot}",
       "protocol": "inspector"
-      /*
-      "internalConsoleOptions": "openOnSessionStart",
-      "env": {
-        "TS_NODE_PROJECT": "tsconfig.json"
-      },
-      "stopOnEntry": false
-      */
+      //"program": "${workspaceFolder}/server/index.ts",
+      //"port": 8443
     },
     {
       "type": "node",
       "request": "attach",
       "sourceMaps": true,
-      "name": "Attach",
-      "port": 3100
+      "name": "NodeJS Attach",
+      "protocol": "inspector",
+      "processId": "${command:PickProcess}",
+      "port": 8443
     }
   ]
 }

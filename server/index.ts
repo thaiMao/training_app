@@ -1,5 +1,4 @@
 /* eslint no-console:0 */
-
 import https from 'https'
 import fs from 'fs'
 import path from 'path'
@@ -13,6 +12,17 @@ const options = {
 
 const PORT = 8080
 
+let httpsServer: any
+let currentApp = app
+
 Loadable.preloadAll().then(() => {
-  https.createServer(options, app).listen(8443)
+  httpsServer = https.createServer(options, app).listen(8443)
 })
+
+if (module.hot) {
+  module.hot.accept([path.resolve(__dirname, 'server')], () => {
+    httpsServer.removeListener('request', currentApp)
+    httpsServer.on('request', app)
+    currentApp = app
+  })
+}

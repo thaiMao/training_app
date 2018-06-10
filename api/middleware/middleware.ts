@@ -1,6 +1,6 @@
 import * as bodyParser from 'body-parser'
-import * as cors from 'cors'
-import * as helmet from 'helmet'
+import cors from 'cors'
+import helmet from 'helmet'
 import utils from 'utils'
 
 const origin = utils.getUrl(utils.isProd())
