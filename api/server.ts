@@ -2,7 +2,7 @@
 import chalk from 'chalk'
 import config from 'config'
 import { connectNoSqlDb } from 'db'
-import * as express from 'express'
+import express from 'express'
 import { graphQLRouter } from 'routes/graphql'
 import { graphiqlExpress } from 'apollo-server-express'
 import { createServer } from 'https'

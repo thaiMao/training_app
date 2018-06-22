@@ -1,5 +1,5 @@
 ///<reference path="typings.d.ts" />
-import 'file-loader?name=./web-app-manifest.json!./web-app-manifest.json'
+// import 'file-loader?name=./web-app-manifest.json!./web-app-manifest.json'
 // import 'add-to-homescreen/addtohomescreen.js'
 // import 'styles/addtohomescreen.css'
 import { Route, Switch } from 'react-router-dom'
@@ -8,9 +8,11 @@ import styled, { ThemeProvider } from 'styled-components'
 import Loadable from 'react-loadable'
 import { Loading } from 'Loading'
 import { Provider } from 'react-redux'
-import store from 'store'
+import store, { sagaMiddleware } from 'store'
 import { theme } from 'theme'
-
+import { createStore } from 'redux'
+import { Api } from 'helpers/api'
+debugger
 const About = Loadable({
   loader: () => import('About'),
   loading: Loading,
@@ -47,27 +49,22 @@ const NotFound = Loadable({
   timeout: 10000
 })
 
-// Render Props using Loadable.Map
-
-class App extends Component {
-  componentDidMount() {}
-
-  render() {
-    return (
-      <Provider store={store}>
-        <ThemeProvider theme={theme}>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/count" component={Count} />
-            <Route path="/about" component={About} />
-            <Route path="/admin" component={Admin} />
-            <Route path="/:id" component={Exercise} />
-            <Route component={NotFound} />
-          </Switch>
-        </ThemeProvider>
-      </Provider>
-    )
-  }
+// TODO Render Props using Loadable.Map
+function App() {
+  return (
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/count" component={Count} />
+          <Route path="/about" component={About} />
+          <Route path="/admin" component={Admin} />
+          <Route path="/:id" component={Exercise} />
+          <Route component={NotFound} />
+        </Switch>
+      </ThemeProvider>
+    </Provider>
+  )
 }
 
 export default App

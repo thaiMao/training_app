@@ -1,10 +1,10 @@
-import React, { PureComponent, MouseEvent } from 'react'
+import React, { MouseEvent } from 'react'
 
 interface State {
   count: number
 }
 
-class Count extends PureComponent {
+class Count extends React.PureComponent {
   state = {
     count: 0
   }

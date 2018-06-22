@@ -1,0 +1,976 @@
+{
+  "./Data": [
+    {
+      "id": "./src/Components/Data/Data.tsx",
+      "name": "./src/Components/Data/Data.tsx",
+      "file": "0.server.js"
+    },
+    {
+      "id": "./src/Components/Data/Data.tsx",
+      "name": "./src/Components/Data/Data.tsx",
+      "file": "0.server.js.map"
+    }
+  ],
+  "Components/Data": [
+    {
+      "id": "./src/Components/Data/index.ts",
+      "name": "./src/Components/Data/index.ts",
+      "file": "0.server.js"
+    },
+    {
+      "id": "./src/Components/Data/index.ts",
+      "name": "./src/Components/Data/index.ts",
+      "file": "0.server.js.map"
+    }
+  ],
+  "./Home": [
+    {
+      "id": "./src/Home/Home.tsx",
+      "name": "./src/Home/Home.tsx",
+      "file": "0.server.js"
+    },
+    {
+      "id": "./src/Home/Home.tsx",
+      "name": "./src/Home/Home.tsx",
+      "file": "0.server.js.map"
+    }
+  ],
+  "Home": [
+    {
+      "id": "./src/Home/index.ts",
+      "name": "./src/Home/index.ts",
+      "file": "0.server.js"
+    },
+    {
+      "id": "./src/Home/index.ts",
+      "name": "./src/Home/index.ts",
+      "file": "0.server.js.map"
+    }
+  ],
+  "app-constants": [
+    {
+      "id": "./src/app-constants/index.ts",
+      "name": "./src/app-constants/index.ts",
+      "file": "0.server.js"
+    },
+    {
+      "id": "./src/app-constants/index.ts",
+      "name": "./src/app-constants/index.ts",
+      "file": "0.server.js.map"
+    },
+    {
+      "id": "./src/app-constants/index.ts",
+      "name": "./src/app-constants/index.ts",
+      "file": "1.server.js"
+    },
+    {
+      "id": "./src/app-constants/index.ts",
+      "name": "./src/app-constants/index.ts",
+      "file": "1.server.js.map"
+    }
+  ],
+  "./fetch": [
+    {
+      "id": "./src/app-utils/fetch.ts",
+      "name": "./src/app-utils/fetch.ts",
+      "file": "0.server.js"
+    },
+    {
+      "id": "./src/app-utils/fetch.ts",
+      "name": "./src/app-utils/fetch.ts",
+      "file": "0.server.js.map"
+    },
+    {
+      "id": "./src/app-utils/fetch.ts",
+      "name": "./src/app-utils/fetch.ts",
+      "file": "1.server.js"
+    },
+    {
+      "id": "./src/app-utils/fetch.ts",
+      "name": "./src/app-utils/fetch.ts",
+      "file": "1.server.js.map"
+    }
+  ],
+  "app-utils": [
+    {
+      "id": "./src/app-utils/index.ts",
+      "name": "./src/app-utils/index.ts",
+      "file": "0.server.js"
+    },
+    {
+      "id": "./src/app-utils/index.ts",
+      "name": "./src/app-utils/index.ts",
+      "file": "0.server.js.map"
+    },
+    {
+      "id": "./src/app-utils/index.ts",
+      "name": "./src/app-utils/index.ts",
+      "file": "1.server.js"
+    },
+    {
+      "id": "./src/app-utils/index.ts",
+      "name": "./src/app-utils/index.ts",
+      "file": "1.server.js.map"
+    }
+  ],
+  "Components/Admin/Admin": [
+    {
+      "id": "./src/Components/Admin/Admin.tsx",
+      "name": "./src/Components/Admin/Admin.tsx",
+      "file": "1.server.js"
+    },
+    {
+      "id": "./src/Components/Admin/Admin.tsx",
+      "name": "./src/Components/Admin/Admin.tsx",
+      "file": "1.server.js.map"
+    }
+  ],
+  "./SendPushNotification": [
+    {
+      "id": "./src/Components/Admin/SendPushNotification.tsx",
+      "name": "./src/Components/Admin/SendPushNotification.tsx",
+      "file": "1.server.js"
+    },
+    {
+      "id": "./src/Components/Admin/SendPushNotification.tsx",
+      "name": "./src/Components/Admin/SendPushNotification.tsx",
+      "file": "1.server.js.map"
+    }
+  ],
+  "Components/Admin": [
+    {
+      "id": "./src/Components/Admin/index.ts",
+      "name": "./src/Components/Admin/index.ts",
+      "file": "1.server.js"
+    },
+    {
+      "id": "./src/Components/Admin/index.ts",
+      "name": "./src/Components/Admin/index.ts",
+      "file": "1.server.js.map"
+    }
+  ],
+  "./cjs/react.development.js": [
+    {
+      "id": "./node_modules/React/cjs/react.development.js",
+      "name": "./node_modules/React/cjs/react.development.js",
+      "file": "2.server.js"
+    },
+    {
+      "id": "./node_modules/React/cjs/react.development.js",
+      "name": "./node_modules/React/cjs/react.development.js",
+      "file": "2.server.js.map"
+    }
+  ],
+  "./cjs/react.production.min.js": [
+    {
+      "id": "./node_modules/React/cjs/react.production.min.js",
+      "name": "./node_modules/React/cjs/react.production.min.js",
+      "file": "2.server.js"
+    },
+    {
+      "id": "./node_modules/React/cjs/react.production.min.js",
+      "name": "./node_modules/React/cjs/react.production.min.js",
+      "file": "2.server.js.map"
+    }
+  ],
+  "React": [
+    {
+      "id": "./node_modules/React/index.js",
+      "name": "./node_modules/React/index.js",
+      "file": "2.server.js"
+    },
+    {
+      "id": "./node_modules/React/index.js",
+      "name": "./node_modules/React/index.js",
+      "file": "2.server.js.map"
+    }
+  ],
+  "NotFound": [
+    {
+      "id": "./src/NotFound.tsx",
+      "name": "./src/NotFound.tsx",
+      "file": "2.server.js"
+    },
+    {
+      "id": "./src/NotFound.tsx",
+      "name": "./src/NotFound.tsx",
+      "file": "2.server.js.map"
+    }
+  ],
+  "Exercise": [
+    {
+      "id": "./src/Exercise.tsx",
+      "name": "./src/Exercise.tsx",
+      "file": "3.server.js"
+    },
+    {
+      "id": "./src/Exercise.tsx",
+      "name": "./src/Exercise.tsx",
+      "file": "3.server.js.map"
+    }
+  ],
+  "Count": [
+    {
+      "id": "./src/Count.tsx",
+      "name": "./src/Count.tsx",
+      "file": "4.server.js"
+    },
+    {
+      "id": "./src/Count.tsx",
+      "name": "./src/Count.tsx",
+      "file": "4.server.js.map"
+    }
+  ],
+  "About": [
+    {
+      "id": "./src/About.tsx",
+      "name": "./src/About.tsx",
+      "file": "5.server.js"
+    },
+    {
+      "id": "./src/About.tsx",
+      "name": "./src/About.tsx",
+      "file": "5.server.js.map"
+    }
+  ],
+  "./helpers": [
+    {
+      "id": "./src/helpers/api/star-wars/helpers.ts",
+      "name": "./src/helpers/api/star-wars/helpers.ts",
+      "file": "server.js"
+    },
+    {
+      "id": "./src/app-constants/helpers/index.ts",
+      "name": "./src/app-constants/helpers/index.ts",
+      "file": "server.js"
+    },
+    {
+      "id": "./src/helpers/api/star-wars/helpers.ts",
+      "name": "./src/helpers/api/star-wars/helpers.ts",
+      "file": "server.js.map"
+    },
+    {
+      "id": "./src/app-constants/helpers/index.ts",
+      "name": "./src/app-constants/helpers/index.ts",
+      "file": "server.js.map"
+    }
+  ],
+  "undefined": [
+    {
+      "id": 0,
+      "name": null,
+      "file": "server.js"
+    },
+    {
+      "id": "webpack/hot/dev-server",
+      "name": "webpack/hot/dev-server",
+      "file": "server.js"
+    },
+    {
+      "id": "https",
+      "name": "https",
+      "file": "server.js"
+    },
+    {
+      "id": "fs",
+      "name": "fs",
+      "file": "server.js"
+    },
+    {
+      "id": "path",
+      "name": "path",
+      "file": "server.js"
+    },
+    {
+      "id": "react-loadable",
+      "name": "react-loadable",
+      "file": "server.js"
+    },
+    {
+      "id": "express",
+      "name": "express",
+      "file": "server.js"
+    },
+    {
+      "id": "morgan",
+      "name": "morgan",
+      "file": "server.js"
+    },
+    {
+      "id": "helmet",
+      "name": "helmet",
+      "file": "server.js"
+    },
+    {
+      "id": "react",
+      "name": "react",
+      "file": "server.js"
+    },
+    {
+      "id": "react-dom/server",
+      "name": "react-dom/server",
+      "file": "server.js"
+    },
+    {
+      "id": "react-router-dom",
+      "name": "react-router-dom",
+      "file": "server.js"
+    },
+    {
+      "id": "react-loadable/webpack",
+      "name": "react-loadable/webpack",
+      "file": "server.js"
+    },
+    {
+      "id": "serialize-javascript",
+      "name": "serialize-javascript",
+      "file": "server.js"
+    },
+    {
+      "id": "redux-saga/effects",
+      "name": "redux-saga/effects",
+      "file": "server.js"
+    },
+    {
+      "id": "es6-promise",
+      "name": "es6-promise",
+      "file": "server.js"
+    },
+    {
+      "id": "isomorphic-fetch",
+      "name": "isomorphic-fetch",
+      "file": "server.js"
+    },
+    {
+      "id": "ramda",
+      "name": "ramda",
+      "file": "server.js"
+    },
+    {
+      "id": "redux",
+      "name": "redux",
+      "file": "server.js"
+    },
+    {
+      "id": "redux-saga",
+      "name": "redux-saga",
+      "file": "server.js"
+    },
+    {
+      "id": "styled-components",
+      "name": "styled-components",
+      "file": "server.js"
+    },
+    {
+      "id": "react-redux",
+      "name": "react-redux",
+      "file": "server.js"
+    },
+    {
+      "id": "url",
+      "name": "url",
+      "file": "server.js"
+    },
+    {
+      "id": "strip-ansi",
+      "name": "strip-ansi",
+      "file": "server.js"
+    },
+    {
+      "id": "loglevel",
+      "name": "loglevel",
+      "file": "server.js"
+    },
+    {
+      "id": "./node_modules/webpack/hot ^\\.\\/log$",
+      "name": "./node_modules/webpack/hot ^\\.\\/log$",
+      "file": "server.js"
+    },
+    {
+      "id": "webpack/hot/emitter",
+      "name": "webpack/hot/emitter",
+      "file": "server.js"
+    },
+    {
+      "id": "ansi-html",
+      "name": "ansi-html",
+      "file": "server.js"
+    },
+    {
+      "id": "html-entities",
+      "name": "html-entities",
+      "file": "server.js"
+    },
+    {
+      "id": "sockjs-client/dist/sockjs",
+      "name": "sockjs-client/dist/sockjs",
+      "file": "server.js"
+    },
+    {
+      "id": "react-helmet",
+      "name": "react-helmet",
+      "file": "server.js"
+    },
+    {
+      "id": "object-assign",
+      "name": "object-assign",
+      "file": "server.js"
+    },
+    {
+      "id": "fbjs/lib/emptyObject",
+      "name": "fbjs/lib/emptyObject",
+      "file": "server.js"
+    },
+    {
+      "id": "fbjs/lib/invariant",
+      "name": "fbjs/lib/invariant",
+      "file": "server.js"
+    },
+    {
+      "id": "fbjs/lib/warning",
+      "name": "fbjs/lib/warning",
+      "file": "server.js"
+    },
+    {
+      "id": "fbjs/lib/emptyFunction",
+      "name": "fbjs/lib/emptyFunction",
+      "file": "server.js"
+    },
+    {
+      "id": "prop-types/checkPropTypes",
+      "name": "prop-types/checkPropTypes",
+      "file": "server.js"
+    },
+    {
+      "id": 0,
+      "name": null,
+      "file": "server.js.map"
+    },
+    {
+      "id": "webpack/hot/dev-server",
+      "name": "webpack/hot/dev-server",
+      "file": "server.js.map"
+    },
+    {
+      "id": "https",
+      "name": "https",
+      "file": "server.js.map"
+    },
+    {
+      "id": "fs",
+      "name": "fs",
+      "file": "server.js.map"
+    },
+    {
+      "id": "path",
+      "name": "path",
+      "file": "server.js.map"
+    },
+    {
+      "id": "react-loadable",
+      "name": "react-loadable",
+      "file": "server.js.map"
+    },
+    {
+      "id": "express",
+      "name": "express",
+      "file": "server.js.map"
+    },
+    {
+      "id": "morgan",
+      "name": "morgan",
+      "file": "server.js.map"
+    },
+    {
+      "id": "helmet",
+      "name": "helmet",
+      "file": "server.js.map"
+    },
+    {
+      "id": "react",
+      "name": "react",
+      "file": "server.js.map"
+    },
+    {
+      "id": "react-dom/server",
+      "name": "react-dom/server",
+      "file": "server.js.map"
+    },
+    {
+      "id": "react-router-dom",
+      "name": "react-router-dom",
+      "file": "server.js.map"
+    },
+    {
+      "id": "react-loadable/webpack",
+      "name": "react-loadable/webpack",
+      "file": "server.js.map"
+    },
+    {
+      "id": "serialize-javascript",
+      "name": "serialize-javascript",
+      "file": "server.js.map"
+    },
+    {
+      "id": "redux-saga/effects",
+      "name": "redux-saga/effects",
+      "file": "server.js.map"
+    },
+    {
+      "id": "es6-promise",
+      "name": "es6-promise",
+      "file": "server.js.map"
+    },
+    {
+      "id": "isomorphic-fetch",
+      "name": "isomorphic-fetch",
+      "file": "server.js.map"
+    },
+    {
+      "id": "ramda",
+      "name": "ramda",
+      "file": "server.js.map"
+    },
+    {
+      "id": "redux",
+      "name": "redux",
+      "file": "server.js.map"
+    },
+    {
+      "id": "redux-saga",
+      "name": "redux-saga",
+      "file": "server.js.map"
+    },
+    {
+      "id": "styled-components",
+      "name": "styled-components",
+      "file": "server.js.map"
+    },
+    {
+      "id": "react-redux",
+      "name": "react-redux",
+      "file": "server.js.map"
+    },
+    {
+      "id": "url",
+      "name": "url",
+      "file": "server.js.map"
+    },
+    {
+      "id": "strip-ansi",
+      "name": "strip-ansi",
+      "file": "server.js.map"
+    },
+    {
+      "id": "loglevel",
+      "name": "loglevel",
+      "file": "server.js.map"
+    },
+    {
+      "id": "./node_modules/webpack/hot ^\\.\\/log$",
+      "name": "./node_modules/webpack/hot ^\\.\\/log$",
+      "file": "server.js.map"
+    },
+    {
+      "id": "webpack/hot/emitter",
+      "name": "webpack/hot/emitter",
+      "file": "server.js.map"
+    },
+    {
+      "id": "ansi-html",
+      "name": "ansi-html",
+      "file": "server.js.map"
+    },
+    {
+      "id": "html-entities",
+      "name": "html-entities",
+      "file": "server.js.map"
+    },
+    {
+      "id": "sockjs-client/dist/sockjs",
+      "name": "sockjs-client/dist/sockjs",
+      "file": "server.js.map"
+    },
+    {
+      "id": "react-helmet",
+      "name": "react-helmet",
+      "file": "server.js.map"
+    },
+    {
+      "id": "object-assign",
+      "name": "object-assign",
+      "file": "server.js.map"
+    },
+    {
+      "id": "fbjs/lib/emptyObject",
+      "name": "fbjs/lib/emptyObject",
+      "file": "server.js.map"
+    },
+    {
+      "id": "fbjs/lib/invariant",
+      "name": "fbjs/lib/invariant",
+      "file": "server.js.map"
+    },
+    {
+      "id": "fbjs/lib/warning",
+      "name": "fbjs/lib/warning",
+      "file": "server.js.map"
+    },
+    {
+      "id": "fbjs/lib/emptyFunction",
+      "name": "fbjs/lib/emptyFunction",
+      "file": "server.js.map"
+    },
+    {
+      "id": "prop-types/checkPropTypes",
+      "name": "prop-types/checkPropTypes",
+      "file": "server.js.map"
+    }
+  ],
+  "webpack/hot/poll?1000": [
+    {
+      "id": "./node_modules/webpack/hot/poll.js?1000",
+      "name": "./node_modules/webpack/hot/poll.js?1000",
+      "file": "server.js"
+    },
+    {
+      "id": "./node_modules/webpack/hot/poll.js?1000",
+      "name": "./node_modules/webpack/hot/poll.js?1000",
+      "file": "server.js.map"
+    }
+  ],
+  "./server/index.ts": [
+    {
+      "id": "./server/index.ts",
+      "name": "./server/index.ts",
+      "file": "server.js"
+    },
+    {
+      "id": "./server/index.ts",
+      "name": "./server/index.ts",
+      "file": "server.js.map"
+    }
+  ],
+  "./server": [
+    {
+      "id": "./server/server.tsx",
+      "name": "./server/server.tsx",
+      "file": "server.js"
+    },
+    {
+      "id": "./server/server.tsx",
+      "name": "./server/server.tsx",
+      "file": "server.js.map"
+    }
+  ],
+  "App": [
+    {
+      "id": "./src/App.tsx",
+      "name": "./src/App.tsx",
+      "file": "server.js"
+    },
+    {
+      "id": "./src/App.tsx",
+      "name": "./src/App.tsx",
+      "file": "server.js.map"
+    }
+  ],
+  "store": [
+    {
+      "id": "./src/store/index.tsx",
+      "name": "./src/store/index.tsx",
+      "file": "server.js"
+    },
+    {
+      "id": "./src/store/index.tsx",
+      "name": "./src/store/index.tsx",
+      "file": "server.js.map"
+    }
+  ],
+  "actions/data": [
+    {
+      "id": "./src/actions/data.ts",
+      "name": "./src/actions/data.ts",
+      "file": "server.js"
+    },
+    {
+      "id": "./src/actions/data.ts",
+      "name": "./src/actions/data.ts",
+      "file": "server.js.map"
+    }
+  ],
+  "actions/types": [
+    {
+      "id": "./src/actions/types.ts",
+      "name": "./src/actions/types.ts",
+      "file": "server.js"
+    },
+    {
+      "id": "./src/actions/types.ts",
+      "name": "./src/actions/types.ts",
+      "file": "server.js.map"
+    }
+  ],
+  "actions/selectors": [
+    {
+      "id": "./src/actions/selectors.ts",
+      "name": "./src/actions/selectors.ts",
+      "file": "server.js"
+    },
+    {
+      "id": "./src/actions/selectors.ts",
+      "name": "./src/actions/selectors.ts",
+      "file": "server.js.map"
+    }
+  ],
+  "helpers": [
+    {
+      "id": "./src/helpers/index.ts",
+      "name": "./src/helpers/index.ts",
+      "file": "server.js"
+    },
+    {
+      "id": "./src/helpers/index.ts",
+      "name": "./src/helpers/index.ts",
+      "file": "server.js.map"
+    }
+  ],
+  "./api": [
+    {
+      "id": "./src/helpers/api/index.ts",
+      "name": "./src/helpers/api/index.ts",
+      "file": "server.js"
+    },
+    {
+      "id": "./src/helpers/api/api.ts",
+      "name": "./src/helpers/api/api.ts",
+      "file": "server.js"
+    },
+    {
+      "id": "./src/helpers/api/index.ts",
+      "name": "./src/helpers/api/index.ts",
+      "file": "server.js.map"
+    },
+    {
+      "id": "./src/helpers/api/api.ts",
+      "name": "./src/helpers/api/api.ts",
+      "file": "server.js.map"
+    }
+  ],
+  "./star-wars": [
+    {
+      "id": "./src/helpers/api/star-wars/index.ts",
+      "name": "./src/helpers/api/star-wars/index.ts",
+      "file": "server.js"
+    },
+    {
+      "id": "./src/helpers/api/star-wars/index.ts",
+      "name": "./src/helpers/api/star-wars/index.ts",
+      "file": "server.js.map"
+    }
+  ],
+  "./public-methods": [
+    {
+      "id": "./src/helpers/api/star-wars/public-methods.ts",
+      "name": "./src/helpers/api/star-wars/public-methods.ts",
+      "file": "server.js"
+    },
+    {
+      "id": "./src/helpers/api/star-wars/public-methods.ts",
+      "name": "./src/helpers/api/star-wars/public-methods.ts",
+      "file": "server.js.map"
+    }
+  ],
+  "helpers/api/helpers": [
+    {
+      "id": "./src/helpers/api/helpers/index.ts",
+      "name": "./src/helpers/api/helpers/index.ts",
+      "file": "server.js"
+    },
+    {
+      "id": "./src/helpers/api/helpers/index.ts",
+      "name": "./src/helpers/api/helpers/index.ts",
+      "file": "server.js.map"
+    }
+  ],
+  "./requests": [
+    {
+      "id": "./src/helpers/api/star-wars/requests.ts",
+      "name": "./src/helpers/api/star-wars/requests.ts",
+      "file": "server.js"
+    },
+    {
+      "id": "./src/helpers/api/star-wars/requests.ts",
+      "name": "./src/helpers/api/star-wars/requests.ts",
+      "file": "server.js.map"
+    }
+  ],
+  "./urls": [
+    {
+      "id": "./src/helpers/api/star-wars/urls.ts",
+      "name": "./src/helpers/api/star-wars/urls.ts",
+      "file": "server.js"
+    },
+    {
+      "id": "./src/helpers/api/star-wars/urls.ts",
+      "name": "./src/helpers/api/star-wars/urls.ts",
+      "file": "server.js.map"
+    }
+  ],
+  "/Users/Thai/Desktop/training_app/node_modules/webpack-dev-server/client/index.js?https://localhost:8080": [
+    {
+      "id": "./node_modules/webpack-dev-server/client/index.js?https://localhost:8080",
+      "name": "./node_modules/webpack-dev-server/client/index.js?https://localhost:8080",
+      "file": "server.js"
+    },
+    {
+      "id": "./node_modules/webpack-dev-server/client/index.js?https://localhost:8080",
+      "name": "./node_modules/webpack-dev-server/client/index.js?https://localhost:8080",
+      "file": "server.js.map"
+    }
+  ],
+  "reducers": [
+    {
+      "id": "./src/reducers/index.tsx",
+      "name": "./src/reducers/index.tsx",
+      "file": "server.js"
+    },
+    {
+      "id": "./src/reducers/index.tsx",
+      "name": "./src/reducers/index.tsx",
+      "file": "server.js.map"
+    }
+  ],
+  "reducers/exercises": [
+    {
+      "id": "./src/reducers/exercises.tsx",
+      "name": "./src/reducers/exercises.tsx",
+      "file": "server.js"
+    },
+    {
+      "id": "./src/reducers/exercises.tsx",
+      "name": "./src/reducers/exercises.tsx",
+      "file": "server.js.map"
+    }
+  ],
+  "reducers/data": [
+    {
+      "id": "./src/reducers/data.tsx",
+      "name": "./src/reducers/data.tsx",
+      "file": "server.js"
+    },
+    {
+      "id": "./src/reducers/data.tsx",
+      "name": "./src/reducers/data.tsx",
+      "file": "server.js.map"
+    }
+  ],
+  "actions": [
+    {
+      "id": "./src/actions/index.tsx",
+      "name": "./src/actions/index.tsx",
+      "file": "server.js"
+    },
+    {
+      "id": "./src/actions/index.tsx",
+      "name": "./src/actions/index.tsx",
+      "file": "server.js.map"
+    }
+  ],
+  "Loading": [
+    {
+      "id": "./src/Loading/index.ts",
+      "name": "./src/Loading/index.ts",
+      "file": "server.js"
+    },
+    {
+      "id": "./src/Loading/index.ts",
+      "name": "./src/Loading/index.ts",
+      "file": "server.js.map"
+    }
+  ],
+  "theme": [
+    {
+      "id": "./src/theme/index.tsx",
+      "name": "./src/theme/index.tsx",
+      "file": "server.js"
+    },
+    {
+      "id": "./src/theme/index.tsx",
+      "name": "./src/theme/index.tsx",
+      "file": "server.js.map"
+    }
+  ],
+  "./theme": [
+    {
+      "id": "./src/theme/theme.tsx",
+      "name": "./src/theme/theme.tsx",
+      "file": "server.js"
+    },
+    {
+      "id": "./src/theme/theme.tsx",
+      "name": "./src/theme/theme.tsx",
+      "file": "server.js.map"
+    }
+  ],
+  "./Loading": [
+    {
+      "id": "./src/Loading/Loading.tsx",
+      "name": "./src/Loading/Loading.tsx",
+      "file": "server.js"
+    },
+    {
+      "id": "./src/Loading/Loading.tsx",
+      "name": "./src/Loading/Loading.tsx",
+      "file": "server.js.map"
+    }
+  ],
+  "./log": [
+    {
+      "id": "./node_modules/webpack/hot/log.js",
+      "name": "./node_modules/webpack/hot/log.js",
+      "file": "server.js"
+    },
+    {
+      "id": "./node_modules/webpack/hot/log.js",
+      "name": "./node_modules/webpack/hot/log.js",
+      "file": "server.js.map"
+    }
+  ],
+  "./log-apply-result": [
+    {
+      "id": "./node_modules/webpack/hot/log-apply-result.js",
+      "name": "./node_modules/webpack/hot/log-apply-result.js",
+      "file": "server.js"
+    },
+    {
+      "id": "./node_modules/webpack/hot/log-apply-result.js",
+      "name": "./node_modules/webpack/hot/log-apply-result.js",
+      "file": "server.js.map"
+    }
+  ],
+  "./socket": [
+    {
+      "id": "./node_modules/webpack-dev-server/client/socket.js",
+      "name": "./node_modules/webpack-dev-server/client/socket.js",
+      "file": "server.js"
+    },
+    {
+      "id": "./node_modules/webpack-dev-server/client/socket.js",
+      "name": "./node_modules/webpack-dev-server/client/socket.js",
+      "file": "server.js.map"
+    }
+  ],
+  "./overlay": [
+    {
+      "id": "./node_modules/webpack-dev-server/client/overlay.js",
+      "name": "./node_modules/webpack-dev-server/client/overlay.js",
+      "file": "server.js"
+    },
+    {
+      "id": "./node_modules/webpack-dev-server/client/overlay.js",
+      "name": "./node_modules/webpack-dev-server/client/overlay.js",
+      "file": "server.js.map"
+    }
+  ]
+}

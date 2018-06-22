@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom'
-import React, { PureComponent } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { State } from 'reducers/exercises'
 import { Helmet } from 'react-helmet'
 import { AppleMeta } from 'meta'
-import Worker from 'workers'
 import * as utils from 'app-utils'
 import { Data } from 'Components/Data'
 
@@ -19,11 +18,12 @@ interface Props {
 }
 
 @(connect(mapStateToProps) as any)
-class Home extends PureComponent<Props> {
+class Home extends React.PureComponent<Props> {
   componentDidMount() {
-    const Service = require('workers/service')
+    const Service = require('workers/service').Service
     Service()
-
+    const Worker = require('workers').default
+    debugger
     const worker: any = new Worker()
     worker.postMessage({ a: 1 })
     worker.onmessage = (event: any) => {

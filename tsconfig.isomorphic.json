@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "*": ["*", "src/*", "api/*", "server/*", "dist/*"],
-      "~/*": ["*", "server/*", "dist/*"]
+      "*": ["*", "src/*", "api/*", "server/*"],
+      "~/*": ["*", "server/*"]
     },
     "outDir": "./dist/",
     "sourceMap": true,

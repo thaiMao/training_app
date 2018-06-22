@@ -20,7 +20,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "6e1bb26bee8c63ff06f7"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "2f013c62500a9d51f65e"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -827,7 +827,7 @@ if(true) {
 /***/ "../private/vapid.json":
 /***/ (function(module, exports) {
 
-module.exports = {"publicKey":"BBPeCmoamR37XYeZM8XgCSND_EIlRU7L4FKZOGNE4PBrm2xOBhTSIducR2nUztd9-E7_378znzoxk9BLhTDwMEM","privateKey":"2SseogqvjuxUuzVQSY0UN4nbKkJ2S82-HahEjfaI99A"}
+module.exports = {"publicKey":"BIebrpRIEscL3E8iHjMc54je7rlBlZdpIpNyeeU78WKn2YhCryCXUzPrKD3eRNmfYqaPQJd5F8n_FRntBt44wjI","privateKey":"_Jddpp2p4lknzRezTiObdixuje9TUYj1PkJ509Jv9ks"}
 
 /***/ }),
 
@@ -872,8 +872,15 @@ module.exports = {
 
 "use strict";
 
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const sql = __webpack_require__("./config/database/sql/index.js");
+const sql = __importStar(__webpack_require__("./config/database/sql/index.js"));
 exports.config = {
     expireTime: '30d',
     disableAuth: true,
@@ -955,8 +962,15 @@ exports.default = immutable_1.mergeDeep(baseConfig, envConfig);
 
 "use strict";
 
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const sql = __webpack_require__("./config/database/sql/index.js");
+const sql = __importStar(__webpack_require__("./config/database/sql/index.js"));
 exports.config = {
     expireTime: '30d',
     secrets: {
@@ -1013,11 +1027,14 @@ exports.connectNoSqlDb = nosql_1.connectNoSqlDb;
 
 "use strict";
 
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose = __webpack_require__("mongoose");
-mongoose.Promise = global.Promise;
+const mongoose_1 = __importDefault(__webpack_require__("mongoose"));
+mongoose_1.default.Promise = global.Promise;
 const connect = (config) => {
-    return mongoose.connect(config.db.url);
+    return mongoose_1.default.connect(config.db.url);
 };
 exports.default = connect;
 
@@ -1049,11 +1066,21 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const chalk_1 = __webpack_require__("chalk");
-const path = __webpack_require__("path");
-const new_database_1 = __webpack_require__("./db/sql/new-database.ts");
-const models_1 = __webpack_require__("./db/sql/models/index.ts");
+const chalk_1 = __importDefault(__webpack_require__("chalk"));
+const path = __importStar(__webpack_require__("path"));
+const new_database_1 = __importDefault(__webpack_require__("./db/sql/new-database.ts"));
+const models_1 = __importDefault(__webpack_require__("./db/sql/models/index.ts"));
 const PROJECT_ROOT_PATH = path.join(__dirname, '..', '..');
 function getNewDb(resolve, reject) {
     let sequelize = new_database_1.default;
@@ -1131,14 +1158,24 @@ module.exports = defineAdvertiserModel;
 
 "use strict";
 
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var advertiser_1 = __webpack_require__("./db/sql/models/advertiser.js");
 exports.Advertiser = advertiser_1.default;
 var push_subscription_1 = __webpack_require__("./db/sql/models/push-subscription.js");
 exports.PushSubscription = push_subscription_1.default;
-const fs = __webpack_require__("fs");
-const path = __webpack_require__("path");
-const sequelize_1 = __webpack_require__("sequelize");
+const fs = __importStar(__webpack_require__("fs"));
+const path = __importStar(__webpack_require__("path"));
+const sequelize_1 = __importDefault(__webpack_require__("sequelize"));
 function removeNonModelFiles(file) {
     return file.indexOf('.') !== 0 && file !== 'index.ts';
 }
@@ -1194,9 +1231,12 @@ module.exports = definePushSubscriptionModel;
 
 "use strict";
 
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const sequelize_1 = __webpack_require__("sequelize");
-const config_1 = __webpack_require__("./config/index.ts");
+const sequelize_1 = __importDefault(__webpack_require__("sequelize"));
+const config_1 = __importDefault(__webpack_require__("./config/index.ts"));
 const { db: { sql: { url, options } } } = config_1.default;
 const database = new sequelize_1.default(url, options);
 exports.default = database;
@@ -1217,8 +1257,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const server_1 = __webpack_require__("./server.ts");
+const server_1 = __importDefault(__webpack_require__("./server.ts"));
 function setupApiServer(apiServer) {
     return __awaiter(this, void 0, void 0, function* () {
         yield apiServer.start();
@@ -1258,16 +1301,26 @@ exports.setupMiddleware = middleware_1.default;
 
 "use strict";
 
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const bodyParser = __webpack_require__("body-parser");
-const cors = __webpack_require__("cors");
-const helmet = __webpack_require__("helmet");
-const utils_1 = __webpack_require__("./utils/index.ts");
+const bodyParser = __importStar(__webpack_require__("body-parser"));
+const cors_1 = __importDefault(__webpack_require__("cors"));
+const helmet_1 = __importDefault(__webpack_require__("helmet"));
+const utils_1 = __importDefault(__webpack_require__("./utils/index.ts"));
 const origin = utils_1.default.getUrl(utils_1.default.isProd());
 const corsOptions = utils_1.default.getCorsOptions(origin);
 function setupMiddleware(app) {
-    app.use(helmet());
-    app.use(cors(corsOptions));
+    app.use(helmet_1.default());
+    app.use(cors_1.default(corsOptions));
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
     return app;
@@ -1282,12 +1335,15 @@ exports.default = setupMiddleware;
 
 "use strict";
 
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const config_1 = __webpack_require__("./config/index.ts");
-const expressJwt = __webpack_require__("express-jwt");
-const jwt = __webpack_require__("jsonwebtoken");
+const config_1 = __importDefault(__webpack_require__("./config/index.ts"));
+const express_jwt_1 = __importDefault(__webpack_require__("express-jwt"));
+const jsonwebtoken_1 = __importDefault(__webpack_require__("jsonwebtoken"));
 const resources_1 = __webpack_require__("./resources/index.ts");
-const checkToken = expressJwt({ secret: config_1.default.secrets.JWT_SECRET });
+const checkToken = express_jwt_1.default({ secret: config_1.default.secrets.JWT_SECRET });
 exports.signin = (req, res, next) => {
     const token = exports.signToken(req.user);
     res.json({ token: token });
@@ -1355,7 +1411,7 @@ export const verifyUser = () => (req: any, res: any, next: any) => {
     .catch((error: any) => next(error))
 }
 */
-exports.signToken = (id) => jwt.sign({ id }, config_1.default.secrets.JWT_SECRET, { expiresIn: config_1.default.expireTime });
+exports.signToken = (id) => jsonwebtoken_1.default.sign({ id }, config_1.default.secrets.JWT_SECRET, { expiresIn: config_1.default.expireTime });
 function protect() {
     return checkToken;
 }
@@ -1522,9 +1578,19 @@ exports.default = generateControllers;
 
 "use strict";
 
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const chalk_1 = __webpack_require__("chalk");
-const path = __webpack_require__("path");
+const chalk_1 = __importDefault(__webpack_require__("chalk"));
+const path = __importStar(__webpack_require__("path"));
 const webpush = __webpack_require__("web-push");
 let VAPID;
 if (process.env.VAPID) {
@@ -1653,8 +1719,11 @@ exports.exerciseResolvers = resolvers_1.default;
 
 "use strict";
 
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose = __webpack_require__("mongoose");
+const mongoose_1 = __importDefault(__webpack_require__("mongoose"));
 exports.schema = {
     name: {
         type: String,
@@ -1667,16 +1736,16 @@ exports.schema = {
         default: 'Bicep'
     },
     goal: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         ref: 'size'
     },
     users: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         ref: 'user'
     }
 };
-const exerciseSchema = new mongoose.Schema(exports.schema);
-exports.Exercise = mongoose.model('exercise', exerciseSchema);
+const exerciseSchema = new mongoose_1.default.Schema(exports.schema);
+exports.Exercise = mongoose_1.default.model('exercise', exerciseSchema);
 
 
 /***/ }),
@@ -1793,8 +1862,11 @@ exports.userResolvers = resolvers_1.default;
 
 "use strict";
 
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose = __webpack_require__("mongoose");
+const mongoose_1 = __importDefault(__webpack_require__("mongoose"));
 exports.schema = {
     name: {
         type: String,
@@ -1810,8 +1882,8 @@ exports.schema = {
         required: false
     }
 };
-const userSchema = new mongoose.Schema(exports.schema, { timestamps: true });
-exports.User = mongoose.model('user', userSchema);
+const userSchema = new mongoose_1.default.Schema(exports.schema, { timestamps: true });
+exports.User = mongoose_1.default.model('user', userSchema);
 
 
 /***/ }),
@@ -1912,8 +1984,15 @@ exports.default = userTypes;
 
 "use strict";
 
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const express = __webpack_require__("express");
+const express = __importStar(__webpack_require__("express"));
 const adminRouter = express.Router();
 adminRouter.get('/', (req, res) => {
     res.json({ adminRouter: true });
@@ -1928,8 +2007,15 @@ exports.default = adminRouter;
 
 "use strict";
 
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const express = __webpack_require__("express");
+const express = __importStar(__webpack_require__("express"));
 const analyticsRouter = express.Router();
 analyticsRouter.get('/', (req, res) => {
     res.json({ analyticsRouter: true });
@@ -2052,12 +2138,22 @@ exports.create = controller_1.default;
 
 "use strict";
 
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const modules_1 = __webpack_require__("./modules/index.ts");
 const graphql_1 = __webpack_require__("./routes/graphql/index.ts");
 const apollo_server_express_1 = __webpack_require__("apollo-server-express");
-const routes = __webpack_require__("./routes/index.ts");
-const controller_1 = __webpack_require__("./routes/push-subscription/controller.ts");
+const routes = __importStar(__webpack_require__("./routes/index.ts"));
+const controller_1 = __importDefault(__webpack_require__("./routes/push-subscription/controller.ts"));
 function setupRouters(app) {
     app.use('/signin', routes.signin);
     app.use('/admin', modules_1.protect, routes.admin);
@@ -2095,8 +2191,15 @@ exports.setupRoutes = setupRoutes;
 
 "use strict";
 
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const express = __webpack_require__("express");
+const express = __importStar(__webpack_require__("express"));
 const signinRouter = express.Router();
 signinRouter.get('/', (req, res) => {
     res.json({ signinRouter: true });
@@ -2137,9 +2240,19 @@ exports.default = userControllers;
 
 "use strict";
 
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const express = __webpack_require__("express");
-const user_controller_1 = __webpack_require__("./routes/user/user.controller.ts");
+const express = __importStar(__webpack_require__("express"));
+const user_controller_1 = __importDefault(__webpack_require__("./routes/user/user.controller.ts"));
 const usersRouter = express.Router();
 usersRouter.param('id', user_controller_1.default.findByParam);
 usersRouter
@@ -2168,20 +2281,23 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 ///<reference path="typings.d.ts" />
-const chalk_1 = __webpack_require__("chalk");
-const config_1 = __webpack_require__("./config/index.ts");
+const chalk_1 = __importDefault(__webpack_require__("chalk"));
+const config_1 = __importDefault(__webpack_require__("./config/index.ts"));
 const db_1 = __webpack_require__("./db/index.ts");
-const express = __webpack_require__("express");
+const express_1 = __importDefault(__webpack_require__("express"));
 const https_1 = __webpack_require__("https");
 const middleware_1 = __webpack_require__("./middleware/index.ts");
 const modules_1 = __webpack_require__("./modules/index.ts");
 const setup_1 = __webpack_require__("./routes/setup.ts");
-const db_push_1 = __webpack_require__("./db/sql/db-push.ts");
-const notification_1 = __webpack_require__("./notification.ts");
+const db_push_1 = __importDefault(__webpack_require__("./db/sql/db-push.ts"));
+const notification_1 = __importDefault(__webpack_require__("./notification.ts"));
 // TODO Import getDevelopmentCertificate dynamically
-const devcert_with_localhost_1 = __webpack_require__("devcert-with-localhost");
+const devcert_with_localhost_1 = __importDefault(__webpack_require__("devcert-with-localhost"));
 const devCertOptions = { installCertutil: false };
 function startAndListen(app, port) {
     return new Promise(resolve => {
@@ -2192,7 +2308,7 @@ function startAndListen(app, port) {
     });
 }
 function createApp() {
-    return express();
+    return express_1.default();
 }
 function setupErrorHandler(app) {
     app.use(modules_1.errorHandler);

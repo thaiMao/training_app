@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 interface Props {}
 
-class Exercise extends Component<Props> {
+class Exercise extends React.Component<Props> {
   componentDidMount() {}
 
   render() {

@@ -19,7 +19,7 @@ export const confirmFetchRequest = () => ({
 
 export function* fetchPerson(action: any) {
   try {
-    yield take(TYPES.CONFIRMATION)
+    //yield take(TYPES.CONFIRMATION)
 
     const person = yield call(Api.StarWars.getPeople)
 

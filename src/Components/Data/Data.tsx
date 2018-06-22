@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import {
   confirmFetchRequest,
@@ -31,8 +31,11 @@ const mapDispatchToProps = (dispatch: any) => {
   }
 }
 
-@(connect(mapStateToProps, mapDispatchToProps) as any)
-class Data extends Component<Props, State> {
+@(connect(
+  mapStateToProps,
+  mapDispatchToProps
+) as any)
+class Data extends React.PureComponent<Props, State> {
   state = {
     open: false
   }
